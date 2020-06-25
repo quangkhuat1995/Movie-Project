@@ -1,0 +1,79 @@
+#pay-section {
+  //@include childGrid(4, 5, 1, 3);
+  background: $color-white-0;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  padding: 0 15px;
+  z-index: 3;
+  margin: 80px 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: none;
+  .pay__item--wrapper {
+    padding: $sp-20 0;
+    border-bottom: 1px dashed #ccc;
+    min-height: 40px;
+    // @include displayFlex(space-between, center);
+  }
+  .total {
+    @include styleText($color-choosing, $fs-32);
+    text-align: center;
+    height: 40px; //bằng với process
+    span {
+      display: inline-block;
+      line-height: 40px;
+      font-weight: 700;
+    }
+  }
+  .seatchosen {
+    .myseat {
+      @include styleText($color-red-primary, $fs-14);
+    }
+    #demoMoney {
+      @include styleText($color-choosing, $fs-16);
+    }
+  }
+  .formsection {
+    position: relative;
+    height: 40px;
+    input {
+      width: 100%;
+      height: 100%;
+      padding-top: 20px;
+      border: none;
+      outline: none;
+      &:focus,
+      &:valid {
+        & + label .label-name {
+          transform: translateY(-150%);
+          @include styleText(#4a90e2, $fs-14);
+        }
+      }
+    }
+    label {
+      @include styleText($color-light-1, $fs-18);
+      // display: block;
+      width: 100%;
+      height: 100%;
+      margin-bottom: 0;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      pointer-events: none;
+      .label-name {
+        position: absolute;
+        bottom: 5px;
+        left: 0;
+        transition: all.3s;
+      }
+    }
+    #tbemail {
+      @include styleText($color-red-primary, $fs-12);
+      display: none;
+    }
+    #tbphone {
+      display: none;
+    }
+  }
+}

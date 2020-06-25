@@ -1,0 +1,19 @@
+%clearfix {
+  display: block;
+  content: "";
+  clear: both;
+}
+%slickArrow {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 100px;
+  opacity: 0.5;
+  z-index: 2;
+  border: 0;
+  background-color: transparent;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}

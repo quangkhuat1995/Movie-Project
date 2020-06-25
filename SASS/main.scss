@@ -1,0 +1,39 @@
+/**
+* Helper
+*/
+@import "./Helper/variables";
+@import "./Helper/mixin";
+@import "./Helper/extend";
+// @import "./Helper/function";
+
+/**
+* Base
+*/
+@import "./Base/reset";
+@import "./Base/customize";
+
+/**
+* Vendor
+*/
+@import "./Vendor/slick";
+@import "./Vendor/boostrap";
+/**
+* Layout
+*/
+@import "./Layout/header";
+@import "./Layout/carousel";
+@import "./Layout/showtime";
+@import "./Layout/newsblock";
+@import "./Layout/ads";
+@import "./Layout/footer";
+
+/**
+* PAGES
+*/
+@import "./PAGES/booking";
+/**
+* Component
+*/
+@import "./Component/button";
+@import "./Component/tabs";
+@import "./Component/playContainer";

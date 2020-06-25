@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booking ticket</title>
+    <!-- FONT AWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
+    />
+    <!-- BS4 -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/booking.css" />
+  </head>
+  <body>
+    <div class="body-wrap">
+      <!-- PROCESS -->
+      <section id="process-section">
+        <div id="btnBack" onclick="turnback()">
+          <a href="index.html">
+            <img src="./images/back-session.png" alt="" />
+          </a>
+        </div>
+        <ul class="process__list">
+          <li
+            class="process__item current-process active"
+            data-process="pickseat"
+          >
+            <span>01</span> Chọn Ghế
+          </li>
+          <li class="process__item" data-process="payticket">
+            <span>02</span> Thanh Toán
+          </li>
+          <li class="process__item" data-process="showresult">
+            <span>03</span> Kết quả đặt vé
+          </li>
+        </ul>
+
+        <div class="process__account">
+          <img src="./images/avatar.png" alt="" />
+          Quang Khuất
+        </div>
+      </section>
+      <!-- BOOKING SEAT -->
+      <main id="seat-section">
+        <div class="seat__section--top">
+          <div class="top__left">
+            <div class="cinema-logo">
+              <img src="./images/coop8.png" alt="" />
+            </div>
+            <div class="cinema-info">
+              <p class="address">
+                <span class="cinema-name">BHD Star</span>
+                <span class="cinema-brand"> - Bitexco</span>
+              </p>
+              <p class="day-show">Thứ hai - 15:30 - RẠP 2</p>
+            </div>
+          </div>
+          <!-- <div class="top__mid hideOnDesktop">
+            <span id="totalMoney">0</span>
+            <span>đ</span>
+          </div> -->
+          <div class="top__right">
+            <p>thời gian giữ ghế</p>
+            <p id="timewaiting">
+              05:00
+            </p>
+          </div>
+        </div>
+        <div class="seat__map">
+          <div class="screen">
+            <img src="./images/screen.png" alt="" />
+          </div>
+          <div class="listseat">
+            <!-- <div>
+                <div class="seatrow">
+                  <span class="rowname seat-unclickable">A</span>
+                  <span class="seat-clickable">
+                    <input type="checkbox" id="A01" />
+                    <label for="A01">
+                      <span class="seatnum">01</span>
+                    </label>
+                  </span>
+                  <span class="seat-clickable">
+                    <input type="checkbox" id="A02" />
+                    <label for="A02">
+                      <span class="seatnum">02</span>
+                    </label>
+                  </span>
+                  <span class="seat-clickable">
+                    <input type="checkbox" id="A03" />
+                    <label for="A03">
+                      <span class="seatnum">03</span>
+                    </label>
+                  </span>
+                  <span class="seat-clickable">
+                    <input type="checkbox" id="A04" />
+                    <label for="A04">
+                      <span class="seatnum">04</span>
+                    </label>
+                  </span>
+                  <span class="seat-clickable">
+                    <input type="checkbox" id="A05" />
+                    <label for="A05">
+                      <span class="seatnum">05</span>
+                    </label>
+                  </span>
+                  <span class="seat-clickable">
+                    <input type="checkbox" id="A06" />
+                    <label for="A06">
+                      <span class="seatnum">06</span>
+                    </label>
+                  </span>
+                  <span class="seat-clickable">
+                    <input type="checkbox" id="A07" />
+                    <label for="A07">
+                      <span class="seatnum">07</span>
+                    </label>
+                  </span>
+                  <span class="seat-clickable">
+                    <input type="checkbox" id="A08" />
+                    <label for="A08">
+                      <span class="seatnum">08</span>
+                    </label>
+                  </span>
+                  <span class="seat-clickable">
+                    <input type="checkbox" id="A09" />
+                    <label for="A09">
+                      <span class="seatnum">09</span>
+                    </label>
+                  </span>
+                  <span class="seat-clickable">
+                    <input type="checkbox" id="A10" />
+                    <label for="A10">
+                      <span class="seatnum">10</span>
+                    </label>
+                  </span>
+                  <span class="seat-clickable">
+                    <input type="checkbox" id="A11" />
+                    <label for="A11">
+                      <span class="seatnum">11</span>
+                    </label>
+                  </span>
+                  <span class="seat-clickable">
+                    <input type="checkbox" id="A12" />
+                    <label for="A12">
+                      <span class="seatnum">12</span>
+                    </label>
+                  </span>
+                  <span class="seat-unclickable"></span>
+                </div>
+                <div class="seatrow">
+                  <span class="rowname seat-unclickable">B</span>
+                  <span class="seat-clickable">
+                    <input type="checkbox" id="B01" />
+                    <label for="B01">
+                      <span class="seatnum">01</span>
+                    </label>
+                  </span>
+                  <span class="seat-clickable">
+                    <input type="checkbox" id="B02" />
+                    <label for="B02">
+                      <span class="seatnum">02</span>
+                    </label>
+                  </span>
+                  <span class="seat-clickable">
+                    <input type="checkbox" id="B03" />
+                    <label for="B03">
+                      <span class="seatnum">03</span>
+                    </label>
+                  </span>
+                  <span class="seat-clickable">
+                    <input type="checkbox" id="B04" />
+                    <label for="B04">
+                      <span class="seatnum">04</span>
+                    </label>
+                  </span>
+                  <span class="seat-clickable">
+                    <input type="checkbox" id="B05" />
+                    <label for="B05">
+                      <span class="seatnum">05</span>
+                    </label>
+                  </span>
+                  <span class="seat-clickable">
+                    <input type="checkbox" id="B06" />
+                    <label for="B06">
+                      <span class="seatnum">06</span>
+                    </label>
+                  </span>
+                  <span class="seat-clickable">
+                    <input type="checkbox" id="B07" />
+                    <label for="B07">
+                      <span class="seatnum">07</span>
+                    </label>
+                  </span>
+                  <span class="seat-clickable">
+                    <input type="checkbox" id="B08" />
+                    <label for="B08">
+                      <span class="seatnum">08</span>
+                    </label>
+                  </span>
+                  <span class="seat-clickable">
+                    <input type="checkbox" id="B09" />
+                    <label for="B09">
+                      <span class="seatnum">09</span>
+                    </label>
+                  </span>
+                  <span class="seat-clickable">
+                    <input type="checkbox" id="B10" />
+                    <label for="B10">
+                      <span class="seatnum">10</span>
+                    </label>
+                  </span>
+                  <span class="seat-clickable">
+                    <input type="checkbox" id="B11" />
+                    <label for="B11">
+                      <span class="seatnum">11</span>
+                    </label>
+                  </span>
+                  <span class="seat-clickable">
+                    <input type="checkbox" id="B12" />
+                    <label for="B12">
+                      <span class="seatnum">12</span>
+                    </label>
+                  </span>
+                  <span class="seat-unclickable"></span>
+                </div>
+              </div> -->
+          </div>
+          <div class="noteseat">
+            <span class="note__item">
+              <span class="seat-normal"></span>
+              <span class="seat-info">Ghế thường</span>
+            </span>
+            <span class="note__item">
+              <span class="seat-vip"></span>
+              <span class="seat-info">Ghế VIP</span>
+            </span>
+            <span class="note__item">
+              <span class="seat-couple"></span>
+              <span class="seat-info">Ghế đôi</span>
+            </span>
+            <span class="note__item">
+              <span class="seat-taken"></span>
+              <span class="seat-info">Ghế đã có người chọn</span>
+            </span>
+          </div>
+        </div>
+      </main>
+      <!-- PAY SECTION -->
+      <aside id="pay-section">
+        <div class="pay__item--wrapper">
+          <div class="total">
+            <span id="totalMoney">0 đ</span>
+          </div>
+        </div>
+        <div class="pay__item--wrapper">
+          <div class="film__name font-weight-bold">
+            <span id="filmname">Nhím, Sóc và Viên Đá Thần Kỳ</span>
+          </div>
+        </div>
+        <div class="pay__item--wrapper">
+          <div class="showday row">
+            <div class="col-5">Ngày giờ chiếu:</div>
+            <div class="col-7 text-right font-weight-bold">
+              <span id="date">25/06/2020</span>
+              -
+              <span id="time">20:20</span>
+            </div>
+          </div>
+        </div>
+        <div class="pay__item--wrapper">
+          <div class="theater row">
+            <div class="col-4">Cụm rạp:</div>
+            <div class="col-8 text-right font-weight-bold">
+              <span id="cumrap">BHD Star</span>
+              -
+              <span id="chinhanh">Bitexco</span>
+            </div>
+          </div>
+        </div>
+        <div class="pay__item--wrapper">
+          <div class="rap row">
+            <div class="col-4">Rạp:</div>
+            <div class="col-8 text-right">
+              <span id="rapnumber">Rạp 5</span>
+            </div>
+          </div>
+        </div>
+        <div class="pay__item--wrapper">
+          <div class="seatchosen row">
+            <div class="col-8 myseat">
+              <span>Ghế</span>
+              <span id="myseat">Vui lòng chọn ghế </span>
+            </div>
+            <div class="col-4 text-right font-weight-bold" id="demoMoney">
+              0 đ
+            </div>
+          </div>
+        </div>
+        <div class="pay__item--wrapper">
+          <div class="formsection">
+            <input type="text" id="email" autocomplete="off" required />
+            <label for="email">
+              <span class="label-name">Email</span>
+            </label>
+            <div id="tbemail">Email không được bỏ trống</div>
+          </div>
+        </div>
+        <div class="pay__item--wrapper">
+          <div class="formsection">
+            <input type="text" id="phone" autocomplete="off" required />
+            <label for="phone">
+              <span class="label-name">Phone</span>
+            </label>
+            <div id="tbphone"></div>
+          </div>
+        </div>
+        <div class="pay__item--wrapper">
+          <div class="discountsection row">
+            <div class="col-6">Ưu đãi:</div>
+            <div class="col-6 text-right">
+              <span id="coupon">0%</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+      <!-- CONFIRM -->
+      <section id="confirm">
+        <div class="confirm-wrapper row">
+          <div class="col-6 confirm__item" id="showseat"></div>
+          <div class="col-6 confirm__item" id="btnGoNext" data-goto="next">
+            Tiếp tục
+          </div>
+          <div class="col-6 confirm__item" id="btnPayMoney" data-goto="pay">
+            Thanh Toán
+          </div>
+        </div>
+      </section>
+    </div>
+    <script src="./js/Seat.js"></script>
+    <script src="./js/User.js"></script>
+    <script src="./js/SeatManagement.js"></script>
+    <script src="./js/booking.js"></script>
+    <script src="./js/test.js"></script>
+  </body>
+</html>
