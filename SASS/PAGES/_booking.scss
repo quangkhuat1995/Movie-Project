@@ -11,6 +11,16 @@
   background: url("./../../images/background.jpg") center center/cover;
   color: $color-black-1;
   position: relative;
+  @include RESPONSIVE("768px") {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-areas:
+      "process process process pay"
+      "seat seat seat pay";
+    grid-template-rows: 80px 1fr;
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 /*.booking {

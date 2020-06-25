@@ -40,6 +40,21 @@
     }
   }
 }
+@mixin positionAbsolute($top: false, $left: false, $bottom: false, $right: false) {
+  position: absolute;
+  @if ($top) {
+    top: $top;
+  }
+  @if ($left) {
+    left: $left;
+  }
+  @if ($bottom) {
+    bottom: $bottom;
+  }
+  @if ($right) {
+    right: $right;
+  }
+}
 
 @mixin RESPONSIVE($screen) {
   @if map-has-key($map: $breakpoints, $key: $screen) {

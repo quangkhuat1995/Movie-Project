@@ -256,80 +256,140 @@
       </main>
       <!-- PAY SECTION -->
       <aside id="pay-section">
-        <div class="pay__item--wrapper">
-          <div class="total">
-            <span id="totalMoney">0 đ</span>
-          </div>
-        </div>
-        <div class="pay__item--wrapper">
-          <div class="film__name font-weight-bold">
-            <span id="filmname">Nhím, Sóc và Viên Đá Thần Kỳ</span>
-          </div>
-        </div>
-        <div class="pay__item--wrapper">
-          <div class="showday row">
-            <div class="col-5">Ngày giờ chiếu:</div>
-            <div class="col-7 text-right font-weight-bold">
-              <span id="date">25/06/2020</span>
-              -
-              <span id="time">20:20</span>
+        <div class="pay-wrapper">
+          <div class="pay__item--wrapper">
+            <div class="total">
+              <span id="totalMoney">0 đ</span>
             </div>
           </div>
-        </div>
-        <div class="pay__item--wrapper">
-          <div class="theater row">
-            <div class="col-4">Cụm rạp:</div>
-            <div class="col-8 text-right font-weight-bold">
-              <span id="cumrap">BHD Star</span>
-              -
-              <span id="chinhanh">Bitexco</span>
+          <div class="pay__item--wrapper">
+            <div class="film__name font-weight-bold">
+              <span id="filmname">Nhím, Sóc và Viên Đá Thần Kỳ</span>
             </div>
           </div>
-        </div>
-        <div class="pay__item--wrapper">
-          <div class="rap row">
-            <div class="col-4">Rạp:</div>
-            <div class="col-8 text-right">
-              <span id="rapnumber">Rạp 5</span>
+          <div class="pay__item--wrapper">
+            <div class="showday row">
+              <div class="col-5">Ngày giờ chiếu:</div>
+              <div class="col-7 text-right font-weight-bold">
+                <span id="date">25/06/2020</span>
+                -
+                <span id="time">20:20</span>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="pay__item--wrapper">
-          <div class="seatchosen row">
-            <div class="col-8 myseat">
-              <span>Ghế</span>
-              <span id="myseat">Vui lòng chọn ghế </span>
-            </div>
-            <div class="col-4 text-right font-weight-bold" id="demoMoney">
-              0 đ
-            </div>
-          </div>
-        </div>
-        <div class="pay__item--wrapper">
-          <div class="formsection">
-            <input type="text" id="email" autocomplete="off" required />
-            <label for="email">
-              <span class="label-name">Email</span>
-            </label>
-            <div id="tbemail">Email không được bỏ trống</div>
-          </div>
-        </div>
-        <div class="pay__item--wrapper">
-          <div class="formsection">
-            <input type="text" id="phone" autocomplete="off" required />
-            <label for="phone">
-              <span class="label-name">Phone</span>
-            </label>
-            <div id="tbphone"></div>
-          </div>
-        </div>
-        <div class="pay__item--wrapper">
-          <div class="discountsection row">
-            <div class="col-6">Ưu đãi:</div>
-            <div class="col-6 text-right">
-              <span id="coupon">0%</span>
+          <div class="pay__item--wrapper">
+            <div class="theater row">
+              <div class="col-4">Cụm rạp:</div>
+              <div class="col-8 text-right font-weight-bold">
+                <span id="cumrap">BHD Star</span>
+                -
+                <span id="chinhanh">Bitexco</span>
+              </div>
             </div>
           </div>
+          <div class="pay__item--wrapper">
+            <div class="rap row">
+              <div class="col-4">Rạp:</div>
+              <div class="col-8 text-right">
+                <span id="rapnumber">Rạp 5</span>
+              </div>
+            </div>
+          </div>
+          <div class="pay__item--wrapper">
+            <div class="seatchosen row">
+              <div class="col-8 myseat">
+                <span>Ghế</span>
+                <span id="myseat">Vui lòng chọn ghế </span>
+              </div>
+              <div class="col-4 text-right font-weight-bold" id="demoMoney">
+                0 đ
+              </div>
+            </div>
+          </div>
+          <div class="pay__item--wrapper">
+            <div class="formsection">
+              <input type="text" id="email" autocomplete="off" required />
+              <label for="email">
+                <span class="label-name">Email</span>
+              </label>
+              <div id="tbemail">Email không được bỏ trống</div>
+            </div>
+          </div>
+          <div class="pay__item--wrapper">
+            <div class="formsection">
+              <input type="text" id="phone" autocomplete="off" required />
+              <label for="phone">
+                <span class="label-name">Phone</span>
+              </label>
+              <div id="tbphone"></div>
+            </div>
+          </div>
+          <div class="pay__item--wrapper">
+            <div class="discountsection row">
+              <div class="col-6">Ưu đãi:</div>
+              <div class="col-6 text-right">
+                <span id="coupon">0%</span>
+              </div>
+            </div>
+          </div>
+          <div class="pay__item--wrapper">
+            <div class="howtopay">
+              <p>Hình thức thanh toán</p>
+              <div class="radio-selection">
+                <!-- ATM -->
+                <div class="radio__item">
+                  <input
+                    class="radio__item--input"
+                    type="radio"
+                    name="howtopay"
+                    id="ATM"
+                    value="ATM"
+                  />
+                  <label class="radio__item--label label__ATM" for="ATM">
+                    <div class="pay__figure">
+                      <img src="./images/ATM.png" alt="" />
+                    </div>
+                    <p class="pay__text">Thẻ ATM nội địa</p>
+                  </label>
+                </div>
+                <!-- VISA -->
+                <div class="radio__item">
+                  <input
+                    class="radio__item--input"
+                    type="radio"
+                    name="howtopay"
+                    id="VISA"
+                    value="VISA"
+                  />
+                  <label class="radio__item--label" for="VISA">
+                    <div class="pay__figure">
+                      <img src="./images/visa_mastercard.png" alt="" />
+                    </div>
+                    <p class="pay__text">Visa, Master, JCB</p>
+                  </label>
+                </div>
+                <!-- CASH -->
+                <div class="radio__item">
+                  <input
+                    class="radio__item--input"
+                    type="radio"
+                    name="howtopay"
+                    id="CASH"
+                    value="CASH"
+                  />
+                  <label class="radio__item--label" for="CASH">
+                    <div class="pay__figure">
+                      <img src="./images/cash.png" alt="" />
+                    </div>
+                    <p class="pay__text">Thanh toán tiền mặt</p>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="confirm__item" id="btnPayMoney" data-goto="pay">
+            Thanh Toán
+          </div> -->
         </div>
       </aside>
       <!-- CONFIRM -->

@@ -5,9 +5,14 @@
   margin: 80px 0;
   padding: 30px 0;
   background-color: $color-white-0;
-  position: absolute;
-  top: 0;
-  left: 0;
+  @include positionAbsolute(0, 0);
+  @include RESPONSIVE("768px") {
+    grid-area: seat;
+    margin: 0;
+    margin-left: auto;
+    width: 95%;
+    position: relative;
+  }
   .seat__section--top {
     width: 90%;
     margin: 0 auto;
@@ -32,13 +37,6 @@
           line-height: 5px;
           margin: 0;
         }
-      }
-    }
-    .top__mid {
-      @include styleText($color-choosing, $fs-32);
-      text-align: center;
-      @include RESPONSIVE("768px") {
-        display: none;
       }
     }
     .top__right {
@@ -130,9 +128,7 @@
             }
             .seatnum {
               visibility: hidden;
-              position: absolute;
-              top: 50%;
-              left: 50%;
+              @include positionAbsolute(50%, 50%);
               transform: translate(-50%, -50%);
               text-align: center;
               // line-height: ;

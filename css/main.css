@@ -860,6 +860,13 @@ p {
   z-index: 99;
 }
 
+@media screen and (min-width: 768px) {
+  #process-section {
+    grid-area: process;
+    width: 75%;
+  }
+}
+
 #process-section #btnBack {
   position: absolute;
   top: 50%;
@@ -902,7 +909,7 @@ p {
   position: absolute;
   background: #fb4226;
   height: 2px;
-  width: calc(100%);
+  width: 100%;
 }
 
 #process-section .process__list .process__item span {
@@ -944,6 +951,16 @@ p {
   left: 0;
 }
 
+@media screen and (min-width: 768px) {
+  #seat-section {
+    grid-area: seat;
+    margin: 0;
+    margin-left: auto;
+    width: 95%;
+    position: relative;
+  }
+}
+
 #seat-section .seat__section--top {
   width: 90%;
   margin: 0 auto;
@@ -978,18 +995,6 @@ p {
   font-size: 14px;
   line-height: 5px;
   margin: 0;
-}
-
-#seat-section .seat__section--top .top__mid {
-  color: #44c020;
-  font-size: 32px;
-  text-align: center;
-}
-
-@media screen and (min-width: 768px) {
-  #seat-section .seat__section--top .top__mid {
-    display: none;
-  }
 }
 
 #seat-section .seat__section--top .top__right {
@@ -1226,6 +1231,18 @@ p {
   display: none;
 }
 
+@media screen and (min-width: 768px) {
+  #pay-section {
+    display: block;
+    grid-area: pay;
+    position: relative;
+    overflow-y: scroll;
+    height: 100%;
+    margin: 0;
+    z-index: 99;
+  }
+}
+
 #pay-section .pay__item--wrapper {
   padding: 20px 0;
   border-bottom: 1px dashed #ccc;
@@ -1248,6 +1265,7 @@ p {
 #pay-section .seatchosen .myseat {
   color: #fb4226;
   font-size: 14px;
+  word-break: break-all;
 }
 
 #pay-section .seatchosen #demoMoney {
@@ -1260,7 +1278,7 @@ p {
   height: 40px;
 }
 
-#pay-section .formsection input {
+#pay-section .formsection input[type="text"] {
   width: 100%;
   height: 100%;
   padding-top: 20px;
@@ -1268,7 +1286,7 @@ p {
   outline: none;
 }
 
-#pay-section .formsection input:focus + label .label-name, #pay-section .formsection input:valid + label .label-name {
+#pay-section .formsection input[type="text"]:focus + label .label-name, #pay-section .formsection input[type="text"]:valid + label .label-name {
   transform: translateY(-150%);
   color: #4a90e2;
   font-size: 14px;
@@ -1281,15 +1299,15 @@ p {
   height: 100%;
   margin-bottom: 0;
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
   pointer-events: none;
 }
 
 #pay-section .formsection label .label-name {
   position: absolute;
-  bottom: 5px;
   left: 0;
+  bottom: 5px;
   transition: all 0.3s;
 }
 
@@ -1303,10 +1321,91 @@ p {
   display: none;
 }
 
+#pay-section .howtopay .radio-selection .radio__item {
+  margin-bottom: 10px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#pay-section .howtopay .radio-selection .radio__item--input[type="radio"] {
+  cursor: pointer;
+  background-color: #fff;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #4a90e2;
+  border-radius: 50%;
+  outline: 0;
+  position: relative;
+}
+
+#pay-section .howtopay .radio-selection .radio__item--input[type="radio"]::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+}
+
+#pay-section .howtopay .radio-selection .radio__item--input[type="radio"]:checked::before {
+  background: #4a90e2;
+}
+
+#pay-section .howtopay .radio-selection .radio__item--label {
+  flex: 1;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+}
+
+#pay-section .howtopay .radio-selection .radio__item--label .pay__figure {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+#pay-section .howtopay .radio-selection .radio__item--label .pay__text {
+  color: #000;
+  font-size: 14px;
+  margin: 0;
+}
+
+#pay-section .confirm__item {
+  padding: 20px 15px;
+  cursor: pointer;
+  text-align: center;
+  color: #fff;
+  font-size: 18px;
+  background: #44c020;
+  margin: -15px;
+}
+
 .body-wrap {
   background: url("./../../images/background.jpg") center center/cover;
   color: #000;
   position: relative;
+}
+
+@media screen and (min-width: 768px) {
+  .body-wrap {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-areas: "process process process pay" "seat seat seat pay";
+    grid-template-rows: 80px 1fr;
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 /*.booking {
