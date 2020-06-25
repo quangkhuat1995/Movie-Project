@@ -10,10 +10,12 @@
   width: 100%;
   height: 80px;
   z-index: 99;
+  @include RESPONSIVE("768px") {
+    grid-area: process;
+    width: 75%;
+  }
   #btnBack {
-    position: absolute;
-    top: 50%;
-    left: 20px;
+    @include positionAbsolute(50%, 20px);
     transform: translateY(-50%);
     width: 20px;
     text-align: center;
@@ -44,7 +46,7 @@
           position: absolute;
           background: $color-red-primary;
           height: 2px;
-          width: calc(100%);
+          width: 100%;
         }
       }
       span {
@@ -62,9 +64,7 @@
   }
 
   .process__account {
-    position: absolute;
-    top: 50%;
-    right: $sp-35;
+    @include positionAbsolute(50%, false, false, $sp-35);
     transform: translateY(-50%);
     img {
       display: inline-block;
