@@ -1,5 +1,5 @@
 .showtime {
-  .showtime__panel {
+  &__panel {
     // overflow: hidden;
     .panel__container {
       display: flex !important;
@@ -7,182 +7,147 @@
     }
   }
 }
-.showtime {
-  .showing__item {
-    position: relative;
-    margin-top: $sp-25;
-    padding: 0 $sp-10;
-    .playBtn__overlay {
-      display: none;
-    }
-    .showing__img {
-      .img__link {
-        display: block;
-        width: 100%;
-        height: 100%;
-        padding-top: 147%;
-        border-radius: 4px;
-        img {
-          width: 100%;
-        }
-      }
-      @include addBgImg(dang, 25);
-      @include addBgImg(sap, 25);
+
+.movieThumbnail {
+  margin-top: $sp-25;
+  .playBtn__overlay {
+    display: none;
+  }
+  &__img {
+    @include addBgImg(dang, 25);
+    @include addBgImg(sap, 25);
+  }
+
+  //showtime head
+  .green {
+    background: $color-green-primary !important;
+  }
+  & > .showing__age {
+    @extend %showAge;
+    position: absolute;
+    bottom: 12px;
+    left: 25px;
+  }
+  .showing__head {
+    position: relative; //absolute cho overlay
+    width: 100%;
+    margin-top: $sp-15;
+    @include styleText($color-black-0, $fs-16);
+    font-weight: 600;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    /* autoprefixer: off */
+    -webkit-box-orient: vertical;
+    /* stylelint-disable-next-line value-no-vendor-prefix */
+    // display: -webkit-inline-box;
+    display: none;
+
+    height: 40px;
+    line-height: 20px;
+
+    .showing__age {
+      @extend %showAge;
     }
   }
-}
-//showing__head
-.showtime {
-  .showing__item {
-    .green {
-      background: $color-green-primary !important;
-    }
-    & > .showing__age {
-      display: inline-block;
-      text-align: center;
-      min-width: 30px;
-      border-radius: $border-radius;
-      background: $color-red-primary;
-      @include styleText($color-white-0, $fs-14);
-      padding: 0 $sp-5;
-      margin-right: 8px;
-      font-weight: 600;
-      position: absolute;
-      bottom: 12px;
-      left: 25px;
-    }
-    .showing__head {
-      position: relative; //absolute cho overlay
-      width: 100%;
-      margin-top: $sp-15;
-      .showing__age {
-        display: inline-block;
-        text-align: center;
-        min-width: 30px;
-        border-radius: $border-radius;
-        background: $color-red-primary;
-        @include styleText($color-white-0, $fs-14);
-        padding: 0 $sp-5;
-        margin-right: 8px;
-        font-weight: 600;
-      }
-      font-weight: 600;
-      text-overflow: ellipsis;
-      overflow: hidden;
-      -webkit-line-clamp: 2;
-      /* autoprefixer: off */
-      -webkit-box-orient: vertical;
-      /* stylelint-disable-next-line value-no-vendor-prefix */
-      // display: -webkit-inline-box;
-      display: none;
-
-      height: 40px;
-      line-height: 20px;
-    }
-    .showing__length {
-      display: none;
-      @include styleText($color-black-2, $fs-14 - 1);
-      margin-bottom: $sp-15;
-      margin-top: 8px;
-    }
+  .showing__length {
+    display: none;
+    @include styleText($color-black-2, $fs-14 - 1);
+    margin-bottom: $sp-15;
+    margin-top: 8px;
   }
 }
 
-//showing__point absolute voi showing__item
-.showtime {
-  .showing__item {
-    .publish__date {
-      position: absolute;
-      bottom: 12px;
-      right: 12px;
-      background: $color-dark-1;
-      border-radius: $border-radius;
-      border: 1px solid $color-dark-0;
-      @include displayFlex(center, center, column);
-      @include styleText($color-white-0, $fs-16);
-      font-weight: 400;
-      pointer-events: none;
-      transition: all 0.2s;
+//showing__point absolute voi movieThumbnail
+.movieThumbnail {
+  position: relative;
+  .publish__date {
+    @include positionAbsolute(false, false, 12px, 12px);
+    background: $color-dark-1;
+    border-radius: $border-radius;
+    border: 1px solid $color-dark-0;
+    @include displayFlex(center, center, column);
+    @include styleText($color-white-0, $fs-16);
+    font-weight: 400;
+    pointer-events: none;
+    transition: all 0.2s;
+  }
+  .showing__point {
+    @extend .publish__date;
+    width: 55px;
+    height: 40px;
+    top: 12px;
+    right: 25px;
+    bottom: unset;
+    font-weight: 600;
+    span {
+      transform: scale(1.2);
     }
-    .showing__point {
-      @extend .publish__date;
-      width: 55px;
-      height: 40px;
-      top: 12px;
-      right: 25px;
-      bottom: unset;
-      font-weight: 600;
-      span {
-        transform: scale(1.2);
-      }
-      .star {
-        @include displayFlex(center, center);
+    .star {
+      @include displayFlex(center, center);
 
-        img {
-          width: 8px;
-        }
+      img {
+        width: 8px;
       }
     }
   }
 }
 
 @include RESPONSIVE("768px") {
-  .showtime {
-    .showing__item {
+  .movieThumbnail {
+    .playBtn__overlay {
+      display: block;
+    }
+    .btnContainer {
+      display: block;
+      width: 100%;
+      height: 40px; // = voi showing title
+      background: linear-gradient(to left, #fb4226, #ce3017 100%);
+    }
+    &:hover {
       .playBtn__overlay {
-        display: block;
-      }
-      .btnContainer {
-        display: block;
-        width: 100%;
-        height: 40px; // = voi showing title
-        background: linear-gradient(to left, #fb4226, #ce3017 100%);
-      }
-      &:hover {
-        .playBtn__overlay {
-          opacity: 1; // 0 by default
-        }
+        opacity: 1; // 0 by default
       }
     }
-    .showing__item {
-      cursor: pointer;
-      position: relative; //absolute cho showing__point
-      .showing__img {
-        position: relative; //absolute cho showing__overlay
-        .img__link {
-          position: relative;
-          &::after {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            border-radius: $border-radius;
-            pointer-events: none;
-            background: linear-gradient(to top, #000, transparent 100%);
-            opacity: 0;
-            transition: all 0.2s;
-          }
+  }
+  .movieThumbnail {
+    cursor: pointer;
+    &__img {
+      position: relative; //absolute cho playBtn__overlay
+      .img__link {
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          border-radius: $border-radius;
+          pointer-events: none;
+          background: linear-gradient(to top, #000, transparent 100%);
+          opacity: 0;
+          transition: all 0.2s;
         }
       }
-      &:hover {
-        .img__link::after {
-          opacity: 1;
-        }
-        .showing__length {
-          opacity: 0;
-        }
+      //playBtn__overlay ...
+    }
+    &:hover {
+      .img__link::after {
+        opacity: 1;
       }
       .showing__length {
-        display: block;
+        opacity: 0;
       }
-      .showing__head {
-        display: -webkit-inline-box;
-      }
-      & > .showing__age {
-        display: none;
-      }
+    }
+    .showing__length {
+      display: block;
+    }
+    .showing__head {
+      display: -webkit-inline-box;
+    }
+    & > .showing__age {
+      display: none;
     }
   }
 }

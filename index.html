@@ -51,7 +51,12 @@
           <div class="collapse navbar-collapse" id="loginNav">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a
+                  class="nav-link"
+                  href="#"
+                  data-toggle="modal"
+                  data-target="#modalLRForm"
+                >
                   <img class="btnLogin" src="./images/avatar.png" alt="" />
                   Đăng Nhập
                 </a>
@@ -69,6 +74,16 @@
                 <a class="nav-link" href="#ungdung">Ứng dụng</a>
               </li>
               <li class="nav-item nav-item--location">
+                <a
+                  class="nav-link"
+                  href="#"
+                  data-toggle="modal"
+                  data-target="#modalLRForm"
+                >
+                  Đăng ký
+                </a>
+              </li>
+              <!-- <li class="nav-item nav-item--location">
                 <a class="nav-link" href="#">
                   <img class="btnLocation" src="./images/location.png" alt="" />
                   Hồ Chí Minh
@@ -78,13 +93,208 @@
                     alt=""
                   />
                 </a>
-              </li>
+              </li> -->
             </ul>
           </div>
         </nav>
       </div>
     </header>
+    <!--Modal: Login / Register Form-->
+    <div
+      class="modal fade"
+      id="modalLRForm"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog cascading-modal" role="document">
+        <!--Content-->
+        <div class="modal-content">
+          <!--Modal cascading tabs-->
+          <div class="modal-c-tabs">
+            <!-- Nav tabs -->
+            <ul
+              class="nav nav-tabs md-tabs tabs-2 light-blue darken-3"
+              role="tablist"
+            >
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  data-toggle="tab"
+                  href="#panel7"
+                  role="tab"
+                  ><i class="fas fa-user mr-1"></i> Login</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#panel8" role="tab"
+                  ><i class="fas fa-user-plus mr-1"></i> Register</a
+                >
+              </li>
+            </ul>
+
+            <!-- Tab panels -->
+            <div class="tab-content">
+              <!--Panel 7-->
+              <div
+                class="tab-pane fade in show active"
+                id="panel7"
+                role="tabpanel"
+              >
+                <!--Body-->
+                <div class="modal-body mb-1">
+                  <div class="form-group row">
+                    <div class="col-1 pre-icon">
+                      <i class="fas fa-envelope prefix"></i>
+                    </div>
+                    <div class="col-11">
+                      <div class="formsection">
+                        <input type="text" id="modalLRInput10" required />
+                        <label
+                          data-error="wrong"
+                          data-success="right"
+                          for="modalLRInput10"
+                        >
+                          <span class="label-name"
+                            ><i class="fas fa-envelope prefix"></i>Your
+                            Email</span
+                          >
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="md-form form-sm mb-4">
+                    <i class="fas fa-lock prefix"></i>
+                    <input
+                      type="password"
+                      id="modalLRInput11"
+                      class="form-control form-control-sm validate"
+                    />
+                    <label
+                      data-error="wrong"
+                      data-success="right"
+                      for="modalLRInput11"
+                      >Your password</label
+                    >
+                  </div>
+                  <div class="text-center mt-2">
+                    <button class="btn btn-info">
+                      Log in <i class="fas fa-sign-in ml-1"></i>
+                    </button>
+                  </div>
+                </div>
+                <!--Footer-->
+                <div class="modal-footer">
+                  <div class="options text-center text-md-right mt-1">
+                    <p>
+                      Not a member? <a href="#" class="blue-text">Sign Up</a>
+                    </p>
+                    <p>Forgot <a href="#" class="blue-text">Password?</a></p>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn btn-outline-info waves-effect ml-auto"
+                    data-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+              <!--/.Panel 7-->
+
+              <!--Panel 8-->
+              <div class="tab-pane fade" id="panel8" role="tabpanel">
+                <!--Body-->
+                <div class="modal-body">
+                  <div class="md-form form-sm mb-5">
+                    <i class="fas fa-envelope prefix"></i>
+                    <input
+                      type="email"
+                      id="modalLRInput12"
+                      class="form-control form-control-sm validate"
+                    />
+                    <label
+                      data-error="wrong"
+                      data-success="right"
+                      for="modalLRInput12"
+                      >Your email</label
+                    >
+                  </div>
+
+                  <div class="md-form form-sm mb-5">
+                    <i class="fas fa-lock prefix"></i>
+                    <input
+                      type="password"
+                      id="modalLRInput13"
+                      class="form-control form-control-sm validate"
+                    />
+                    <label
+                      data-error="wrong"
+                      data-success="right"
+                      for="modalLRInput13"
+                      >Your password</label
+                    >
+                  </div>
+
+                  <div class="md-form form-sm mb-4">
+                    <i class="fas fa-lock prefix"></i>
+                    <input
+                      type="password"
+                      id="modalLRInput14"
+                      class="form-control form-control-sm validate"
+                    />
+                    <label
+                      data-error="wrong"
+                      data-success="right"
+                      for="modalLRInput14"
+                      >Repeat password</label
+                    >
+                  </div>
+
+                  <div class="text-center form-sm mt-2">
+                    <button class="btn btn-info">
+                      Sign up <i class="fas fa-sign-in ml-1"></i>
+                    </button>
+                  </div>
+                </div>
+                <!--Footer-->
+                <div class="modal-footer">
+                  <div class="options text-right">
+                    <p class="pt-1">
+                      Already have an account?
+                      <a href="#" class="blue-text">Log In</a>
+                    </p>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn btn-outline-info waves-effect ml-auto"
+                    data-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+              <!--/.Panel 8-->
+            </div>
+          </div>
+        </div>
+        <!--/.Content-->
+      </div>
+    </div>
+    <!--Modal: Login / Register Form-->
+
     <div style="margin-top: 100px;"></div>
+    <div class="text-center">
+      <a
+        href=""
+        class="btn btn-default btn-rounded my-3"
+        data-toggle="modal"
+        data-target="#modalLRForm"
+        >Launch Modal LogIn/Register</a
+      >
+    </div>
     <!-- CAROUSEL -->
     <section class="carousel">
       <!-- carousel item 1 -->
@@ -180,8 +390,8 @@
             <!-- Fist Showing Slide -->
             <div class="panel__container">
               <!-- Showing item 1 -->
-              <div class="showing__item col-6 col-sm-4 col-md-3">
-                <div class="showing__img">
+              <div class="movieThumbnail col-6 col-sm-4 col-md-3">
+                <div class="movieThumbnail__img">
                   <a href="#!" class="img__link dang1">
                     <!-- <img src="./images/dang1.png" alt="" /> -->
                   </a>
@@ -213,8 +423,8 @@
                 </div>
               </div>
               <!-- Showtime item 2 -->
-              <div class="showing__item col-6 col-sm-4 col-md-3">
-                <div class="showing__img">
+              <div class="movieThumbnail col-6 col-sm-4 col-md-3">
+                <div class="movieThumbnail__img">
                   <a href="#!" class="img__link dang2">
                     <!-- <img src="./images/dang2.jpg" alt="" /> -->
                   </a>
@@ -245,8 +455,8 @@
                 </div>
               </div>
               <!-- Showtime item 3 -->
-              <div class="showing__item col-6 col-sm-4 col-md-3">
-                <div class="showing__img">
+              <div class="movieThumbnail col-6 col-sm-4 col-md-3">
+                <div class="movieThumbnail__img">
                   <a href="#!" class="img__link dang3">
                     <!-- <img src="./images/dang3.jpg" alt="" /> -->
                   </a>
@@ -277,8 +487,8 @@
                 </div>
               </div>
               <!-- Showtime item 4 -->
-              <div class="showing__item col-6 col-sm-4 col-md-3">
-                <div class="showing__img">
+              <div class="movieThumbnail col-6 col-sm-4 col-md-3">
+                <div class="movieThumbnail__img">
                   <a href="#!" class="img__link dang4">
                     <!-- <img src="./images/dang4.jpg" alt="" /> -->
                   </a>
@@ -310,8 +520,8 @@
               </div>
 
               <!-- Showtime item 5 -->
-              <div class="showing__item col-6 col-sm-4 col-md-3">
-                <div class="showing__img">
+              <div class="movieThumbnail col-6 col-sm-4 col-md-3">
+                <div class="movieThumbnail__img">
                   <a href="#!" class="img__link dang5">
                     <!-- <img src="./images/dang5.jpg" alt="" /> -->
                   </a>
@@ -343,8 +553,8 @@
                 </div>
               </div>
               <!-- Showtime item 6 -->
-              <div class="showing__item col-6 col-sm-4 col-md-3">
-                <div class="showing__img">
+              <div class="movieThumbnail col-6 col-sm-4 col-md-3">
+                <div class="movieThumbnail__img">
                   <a href="#!" class="img__link dang6">
                     <!-- <img src="./images/dang6.png" alt="" /> -->
                   </a>
@@ -375,8 +585,8 @@
                 </div>
               </div>
               <!-- Showtime item 7 -->
-              <div class="showing__item col-6 col-sm-4 col-md-3">
-                <div class="showing__img">
+              <div class="movieThumbnail col-6 col-sm-4 col-md-3">
+                <div class="movieThumbnail__img">
                   <a href="#!" class="img__link dang7">
                     <!-- <img src="./images/dang7.png" alt="" /> -->
                   </a>
@@ -407,8 +617,8 @@
                 </div>
               </div>
               <!-- Showtime item 8 -->
-              <div class="showing__item col-6 col-sm-4 col-md-3">
-                <div class="showing__img">
+              <div class="movieThumbnail col-6 col-sm-4 col-md-3">
+                <div class="movieThumbnail__img">
                   <a href="#!" class="img__link dang8">
                     <!-- <img src="./images/dang8.png" alt="" /> -->
                   </a>
@@ -441,8 +651,8 @@
             <!-- Second Showing Slide -->
             <div class="panel__container">
               <!-- Showing item 9 -->
-              <div class="showing__item col-6 col-sm-4 col-md-3">
-                <div class="showing__img">
+              <div class="movieThumbnail col-6 col-sm-4 col-md-3">
+                <div class="movieThumbnail__img">
                   <a href="#!" class="img__link dang9">
                     <!-- <img src="./images/dang9.png" alt="" /> -->
                   </a>
@@ -473,8 +683,8 @@
                 </div>
               </div>
               <!-- Showtime item 10 -->
-              <div class="showing__item col-6 col-sm-4 col-md-3">
-                <div class="showing__img">
+              <div class="movieThumbnail col-6 col-sm-4 col-md-3">
+                <div class="movieThumbnail__img">
                   <a href="#!" class="img__link dang10">
                     <!-- <img src="./images/dang10.png" alt="" /> -->
                   </a>
@@ -505,8 +715,8 @@
                 </div>
               </div>
               <!-- Showtime item 11 -->
-              <div class="showing__item col-6 col-sm-4 col-md-3">
-                <div class="showing__img">
+              <div class="movieThumbnail col-6 col-sm-4 col-md-3">
+                <div class="movieThumbnail__img">
                   <a href="#!" class="img__link dang11">
                     <!-- <img src="./images/dang11.png" alt="" /> -->
                   </a>
@@ -537,8 +747,8 @@
                 </div>
               </div>
               <!-- Showtime item 12 -->
-              <div class="showing__item col-6 col-sm-4 col-md-3">
-                <div class="showing__img">
+              <div class="movieThumbnail col-6 col-sm-4 col-md-3">
+                <div class="movieThumbnail__img">
                   <a href="#!" class="img__link dang12">
                     <!-- <img src="./images/dang12.png" alt="" /> -->
                   </a>
@@ -570,8 +780,8 @@
               </div>
 
               <!-- Showtime item 13 -->
-              <div class="showing__item col-6 col-sm-4 col-md-3">
-                <div class="showing__img">
+              <div class="movieThumbnail col-6 col-sm-4 col-md-3">
+                <div class="movieThumbnail__img">
                   <a href="#!" class="img__link dang13">
                     <!-- <img src="./images/dang13.png" alt="" /> -->
                   </a>
@@ -602,8 +812,8 @@
                 </div>
               </div>
               <!-- Showtime item 14 -->
-              <div class="showing__item col-6 col-sm-4 col-md-3">
-                <div class="showing__img">
+              <div class="movieThumbnail col-6 col-sm-4 col-md-3">
+                <div class="movieThumbnail__img">
                   <a href="#!" class="img__link dang14">
                     <!-- <img src="./images/dang14.jpg" alt="" /> -->
                   </a>
@@ -634,8 +844,8 @@
                 </div>
               </div>
               <!-- Showtime item 15 -->
-              <div class="showing__item col-6 col-sm-4 col-md-3">
-                <div class="showing__img">
+              <div class="movieThumbnail col-6 col-sm-4 col-md-3">
+                <div class="movieThumbnail__img">
                   <a href="#!" class="img__link dang15">
                     <!-- <img src="./images/dang15.png" alt="" /> -->
                   </a>
@@ -666,8 +876,8 @@
                 </div>
               </div>
               <!-- Showtime item 16 -->
-              <div class="showing__item col-6 col-sm-4 col-md-3">
-                <div class="showing__img">
+              <div class="movieThumbnail col-6 col-sm-4 col-md-3">
+                <div class="movieThumbnail__img">
                   <a href="#!" class="img__link dang16">
                     <!-- <img src="./images/dang16.png" alt="" /> -->
                   </a>
@@ -700,8 +910,8 @@
             <!-- Third Showing Slide -->
             <div class="panel__container">
               <!-- Showing item 17 -->
-              <div class="showing__item col-6 col-sm-4 col-md-3">
-                <div class="showing__img">
+              <div class="movieThumbnail col-6 col-sm-4 col-md-3">
+                <div class="movieThumbnail__img">
                   <a href="#!" class="img__link dang17">
                     <!-- <img src="./images/dang9.png" alt="" /> -->
                   </a>
@@ -732,8 +942,8 @@
                 </div>
               </div>
               <!-- Showtime item 18 -->
-              <div class="showing__item col-6 col-sm-4 col-md-3">
-                <div class="showing__img">
+              <div class="movieThumbnail col-6 col-sm-4 col-md-3">
+                <div class="movieThumbnail__img">
                   <a href="#!" class="img__link dang18">
                     <!-- <img src="./images/dang10.png" alt="" /> -->
                   </a>
@@ -764,8 +974,8 @@
                 </div>
               </div>
               <!-- Showtime item 19 -->
-              <div class="showing__item col-6 col-sm-4 col-md-3">
-                <div class="showing__img">
+              <div class="movieThumbnail col-6 col-sm-4 col-md-3">
+                <div class="movieThumbnail__img">
                   <a href="#!" class="img__link dang19">
                     <!-- <img src="./images/dang11.png" alt="" /> -->
                   </a>
@@ -796,8 +1006,8 @@
                 </div>
               </div>
               <!-- Showtime item 20 -->
-              <div class="showing__item col-6 col-sm-4 col-md-3">
-                <div class="showing__img">
+              <div class="movieThumbnail col-6 col-sm-4 col-md-3">
+                <div class="movieThumbnail__img">
                   <a href="#!" class="img__link dang20">
                     <!-- <img src="./images/dang12.png" alt="" /> -->
                   </a>
@@ -829,8 +1039,8 @@
               </div>
 
               <!-- Showtime item 21 -->
-              <div class="showing__item col-6 col-sm-4 col-md-3">
-                <div class="showing__img">
+              <div class="movieThumbnail col-6 col-sm-4 col-md-3">
+                <div class="movieThumbnail__img">
                   <a href="#!" class="img__link dang21">
                     <!-- <img src="./images/dang13.png" alt="" /> -->
                   </a>
@@ -861,8 +1071,8 @@
                 </div>
               </div>
               <!-- Showtime item 22 -->
-              <div class="showing__item col-6 col-sm-4 col-md-3">
-                <div class="showing__img">
+              <div class="movieThumbnail col-6 col-sm-4 col-md-3">
+                <div class="movieThumbnail__img">
                   <a href="#!" class="img__link dang22">
                     <!-- <img src="./images/dang14.jpg" alt="" /> -->
                   </a>
@@ -893,8 +1103,8 @@
                 </div>
               </div>
               <!-- Showtime item 23 -->
-              <div class="showing__item col-6 col-sm-4 col-md-3">
-                <div class="showing__img">
+              <div class="movieThumbnail col-6 col-sm-4 col-md-3">
+                <div class="movieThumbnail__img">
                   <a href="#!" class="img__link dang23">
                     <!-- <img src="./images/dang15.png" alt="" /> -->
                   </a>
@@ -925,8 +1135,8 @@
                 </div>
               </div>
               <!-- Showtime item 24 -->
-              <div class="showing__item col-6 col-sm-4 col-md-3">
-                <div class="showing__img">
+              <div class="movieThumbnail col-6 col-sm-4 col-md-3">
+                <div class="movieThumbnail__img">
                   <a href="#!" class="img__link dang24">
                     <!-- <img src="./images/dang16.png" alt="" /> -->
                   </a>
@@ -968,8 +1178,8 @@
             <!-- Fist Coming Slide -->
             <div class="panel__container">
               <!-- Coming item 1 -->
-              <div class="showing__item col-6 col-sm-4 col-md-3">
-                <div class="showing__img">
+              <div class="movieThumbnail col-6 col-sm-4 col-md-3">
+                <div class="movieThumbnail__img">
                   <a href="#!" class="img__link sap1">
                     <!-- <img src="./images/sap1.png" alt="" /> -->
                   </a>
@@ -986,8 +1196,8 @@
                 <p class="showing__length">120 phút</p>
               </div>
               <!-- Coming item 2 -->
-              <div class="showing__item col-6 col-sm-4 col-md-3">
-                <div class="showing__img">
+              <div class="movieThumbnail col-6 col-sm-4 col-md-3">
+                <div class="movieThumbnail__img">
                   <a href="#!" class="img__link sap2">
                     <!-- <img src="./images/sap2.jpg" alt="" /> -->
                   </a>
@@ -1004,8 +1214,8 @@
                 <p class="showing__length">110 phút</p>
               </div>
               <!-- Coming item 3 -->
-              <div class="showing__item col-6 col-sm-4 col-md-3">
-                <div class="showing__img">
+              <div class="movieThumbnail col-6 col-sm-4 col-md-3">
+                <div class="movieThumbnail__img">
                   <a href="#!" class="img__link sap3">
                     <!-- <img src="./images/sap3.jpg" alt="" /> -->
                   </a>
@@ -1022,8 +1232,8 @@
                 <p class="showing__length">90 phút</p>
               </div>
               <!-- Coming item 4 -->
-              <div class="showing__item col-6 col-sm-4 col-md-3">
-                <div class="showing__img">
+              <div class="movieThumbnail col-6 col-sm-4 col-md-3">
+                <div class="movieThumbnail__img">
                   <a href="#!" class="img__link sap4">
                     <!-- <img src="./images/sap4.jpg" alt="" /> -->
                   </a>
@@ -1041,8 +1251,8 @@
               </div>
 
               <!-- Coming item 5 -->
-              <div class="showing__item col-6 col-sm-4 col-md-3">
-                <div class="showing__img">
+              <div class="movieThumbnail col-6 col-sm-4 col-md-3">
+                <div class="movieThumbnail__img">
                   <a href="#!" class="img__link sap5">
                     <!-- <img src="./images/sap5.jpg" alt="" /> -->
                   </a>
@@ -1059,8 +1269,8 @@
                 <p class="showing__length">107 phút</p>
               </div>
               <!-- Coming item 6 -->
-              <div class="showing__item col-6 col-sm-4 col-md-3">
-                <div class="showing__img">
+              <div class="movieThumbnail col-6 col-sm-4 col-md-3">
+                <div class="movieThumbnail__img">
                   <a href="#!" class="img__link sap6">
                     <!-- <img src="./images/sap6.png" alt="" /> -->
                   </a>
@@ -1077,8 +1287,8 @@
                 <p class="showing__length">97 phút</p>
               </div>
               <!-- Coming item 7 -->
-              <div class="showing__item col-6 col-sm-4 col-md-3">
-                <div class="showing__img">
+              <div class="movieThumbnail col-6 col-sm-4 col-md-3">
+                <div class="movieThumbnail__img">
                   <a href="#!" class="img__link sap7">
                     <!-- <img src="./images/sap7.png" alt="" /> -->
                   </a>
@@ -1095,8 +1305,8 @@
                 <p class="showing__length">100 phút</p>
               </div>
               <!-- Coming item 8 -->
-              <div class="showing__item col-6 col-sm-4 col-md-3">
-                <div class="showing__img">
+              <div class="movieThumbnail col-6 col-sm-4 col-md-3">
+                <div class="movieThumbnail__img">
                   <a href="#!" class="img__link sap8">
                     <!-- <img src="./images/sap8.png" alt="" /> -->
                   </a>
@@ -1116,8 +1326,8 @@
             <!-- Second Coming Slide -->
             <div class="panel__container">
               <!-- Showing item 9 -->
-              <div class="showing__item col-6 col-sm-4 col-md-3">
-                <div class="showing__img">
+              <div class="movieThumbnail col-6 col-sm-4 col-md-3">
+                <div class="movieThumbnail__img">
                   <a href="#!" class="img__link sap9">
                     <!-- <img src="./images/sap1.png" alt="" /> -->
                   </a>
@@ -1134,8 +1344,8 @@
                 <p class="showing__length">100 phút</p>
               </div>
               <!-- Coming item 10 -->
-              <div class="showing__item col-6 col-sm-4 col-md-3">
-                <div class="showing__img">
+              <div class="movieThumbnail col-6 col-sm-4 col-md-3">
+                <div class="movieThumbnail__img">
                   <a href="#!" class="img__link sap10">
                     <!-- <img src="./images/sap2.jpg" alt="" /> -->
                   </a>
@@ -1152,8 +1362,8 @@
                 <p class="showing__length">110 phút</p>
               </div>
               <!-- Coming item 11 -->
-              <div class="showing__item col-6 col-sm-4 col-md-3">
-                <div class="showing__img">
+              <div class="movieThumbnail col-6 col-sm-4 col-md-3">
+                <div class="movieThumbnail__img">
                   <a href="#!" class="img__link sap11">
                     <!-- <img src="./images/sap3.jpg" alt="" /> -->
                   </a>
@@ -1170,8 +1380,8 @@
                 <p class="showing__length">100 phút</p>
               </div>
               <!-- Coming item 12 -->
-              <div class="showing__item col-6 col-sm-4 col-md-3">
-                <div class="showing__img">
+              <div class="movieThumbnail col-6 col-sm-4 col-md-3">
+                <div class="movieThumbnail__img">
                   <a href="#!" class="img__link sap12">
                     <!-- <img src="./images/sap4.jpg" alt="" /> -->
                   </a>
@@ -1189,8 +1399,8 @@
               </div>
 
               <!-- Coming item 13 -->
-              <div class="showing__item col-6 col-sm-4 col-md-3">
-                <div class="showing__img">
+              <div class="movieThumbnail col-6 col-sm-4 col-md-3">
+                <div class="movieThumbnail__img">
                   <a href="#!" class="img__link sap13">
                     <!-- <img src="./images/sap13.jpg" alt="" /> -->
                   </a>
@@ -1207,8 +1417,8 @@
                 <p class="showing__length">100 phút</p>
               </div>
               <!-- Coming item 14 -->
-              <div class="showing__item col-6 col-sm-4 col-md-3">
-                <div class="showing__img">
+              <div class="movieThumbnail col-6 col-sm-4 col-md-3">
+                <div class="movieThumbnail__img">
                   <a href="#!" class="img__link sap14">
                     <!-- <img src="./images/sap14.png" alt="" /> -->
                   </a>
@@ -1225,8 +1435,8 @@
                 <p class="showing__length">100 phút</p>
               </div>
               <!-- Coming item 15 -->
-              <div class="showing__item col-6 col-sm-4 col-md-3">
-                <div class="showing__img">
+              <div class="movieThumbnail col-6 col-sm-4 col-md-3">
+                <div class="movieThumbnail__img">
                   <a href="#!" class="img__link sap15">
                     <!-- <img src="./images/sap15.png" alt="" /> -->
                   </a>
@@ -1243,8 +1453,8 @@
                 <p class="showing__length">110 phút</p>
               </div>
               <!-- Coming item 16 -->
-              <div class="showing__item col-6 col-sm-4 col-md-3">
-                <div class="showing__img">
+              <div class="movieThumbnail col-6 col-sm-4 col-md-3">
+                <div class="movieThumbnail__img">
                   <a href="#!" class="img__link sap16">
                     <!-- <img src="./images/sap16.png" alt="" /> -->
                   </a>
@@ -1264,8 +1474,8 @@
             <!-- Third Coming Slide -->
             <div class="panel__container">
               <!-- Showing item 17 -->
-              <div class="showing__item col-6 col-sm-4 col-md-3">
-                <div class="showing__img">
+              <div class="movieThumbnail col-6 col-sm-4 col-md-3">
+                <div class="movieThumbnail__img">
                   <a href="#!" class="img__link sap17">
                     <!-- <img src="./images/sap1.png" alt="" /> -->
                   </a>
@@ -1283,8 +1493,8 @@
                 <p class="showing__length">100 phút</p>
               </div>
               <!-- Coming item 18 -->
-              <div class="showing__item col-6 col-sm-4 col-md-3">
-                <div class="showing__img">
+              <div class="movieThumbnail col-6 col-sm-4 col-md-3">
+                <div class="movieThumbnail__img">
                   <a href="#!" class="img__link sap18">
                     <!-- <img src="./images/sap2.jpg" alt="" /> -->
                   </a>
@@ -1301,8 +1511,8 @@
                 <p class="showing__length">110 phút</p>
               </div>
               <!-- Coming item 19 -->
-              <div class="showing__item col-6 col-sm-4 col-md-3">
-                <div class="showing__img">
+              <div class="movieThumbnail col-6 col-sm-4 col-md-3">
+                <div class="movieThumbnail__img">
                   <a href="#!" class="img__link sap19">
                     <!-- <img src="./images/sap3.jpg" alt="" /> -->
                   </a>
@@ -1319,8 +1529,8 @@
                 <p class="showing__length">100 phút - 8 IMDb</p>
               </div>
               <!-- Coming item 20 -->
-              <div class="showing__item col-6 col-sm-4 col-md-3">
-                <div class="showing__img">
+              <div class="movieThumbnail col-6 col-sm-4 col-md-3">
+                <div class="movieThumbnail__img">
                   <a href="#!" class="img__link sap20">
                     <!-- <img src="./images/sap4.jpg" alt="" /> -->
                   </a>
@@ -1338,8 +1548,8 @@
               </div>
 
               <!-- Coming item 21 -->
-              <div class="showing__item col-6 col-sm-4 col-md-3">
-                <div class="showing__img">
+              <div class="movieThumbnail col-6 col-sm-4 col-md-3">
+                <div class="movieThumbnail__img">
                   <a href="#!" class="img__link sap21">
                     <!-- <img src="./images/sap13.jpg" alt="" /> -->
                   </a>
@@ -1356,8 +1566,8 @@
                 <p class="showing__length">100 phút</p>
               </div>
               <!-- Coming item 22 -->
-              <div class="showing__item col-6 col-sm-4 col-md-3">
-                <div class="showing__img">
+              <div class="movieThumbnail col-6 col-sm-4 col-md-3">
+                <div class="movieThumbnail__img">
                   <a href="#!" class="img__link sap22">
                     <!-- <img src="./images/sap14.png" alt="" /> -->
                   </a>
@@ -1374,8 +1584,8 @@
                 <p class="showing__length">97 phút</p>
               </div>
               <!-- Coming item 23 -->
-              <div class="showing__item col-6 col-sm-4 col-md-3">
-                <div class="showing__img">
+              <div class="movieThumbnail col-6 col-sm-4 col-md-3">
+                <div class="movieThumbnail__img">
                   <a href="#!" class="img__link sap23">
                     <!-- <img src="./images/sap15.png" alt="" /> -->
                   </a>
@@ -1392,8 +1602,8 @@
                 <p class="showing__length">110 phút</p>
               </div>
               <!-- Coming item 24 -->
-              <div class="showing__item col-6 col-sm-4 col-md-3">
-                <div class="showing__img">
+              <div class="movieThumbnail col-6 col-sm-4 col-md-3">
+                <div class="movieThumbnail__img">
                   <a href="#!" class="img__link sap24">
                     <!-- <img src="./images/sap16.png" alt="" /> -->
                   </a>
@@ -1408,6 +1618,251 @@
                 </div>
 
                 <p class="showing__length">111 phút</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- THEATER LIST -->
+    <section class="theater">
+      <div class="myContainer">
+        <div class="row">
+          <!--  -->
+          <!-- COT THU 1-->
+          <!--  -->
+          <!-- NAV THEATER LOGO -->
+          <div class="nav nav-tabs flex-column theater__logos">
+            <a class="nav-item nav-link active" data-toggle="tab" href="#cgv">
+              <img class="theater__image" src="./images/cgv.png" alt="" />
+            </a>
+            <a class="nav-item nav-link" data-toggle="tab" href="#bhd">
+              <img class="theater__image" src="./images/bhd.png" alt="" />
+            </a>
+            <a class="nav-item nav-link" data-toggle="tab" href="#galaxy">
+              <img class="theater__image" src="./images/galaxy.png" alt="" />
+            </a>
+          </div>
+          <!--  -->
+          <!-- COT THU 2 -->
+          <!--  -->
+          <!-- NAV THEATER DETAILS -->
+          <div class="tab-content theater__details">
+            <div class="tab-pane fade show active" id="cgv">
+              <div class="nav nav-tabs">
+                <!-- thong tin tung rap -->
+                <a class="nav-item nav-link" data-toggle="tab" href="#cgv-1">
+                  <div class="theater__details--item">
+                    <img
+                      class="theater__image"
+                      src="./images/theater.jpg"
+                      alt=""
+                    />
+                    <div class="wrapInfo">
+                      <span class="chiNhanh">
+                        <span class="tenRap CGV">CGV</span> - Thảo Điền Pearl
+                      </span>
+                      <span class="diaChi"
+                        >Tầng 2, Thảo Điền Mall, 12 Quốc Hương, Phường Thảo -->
+                        Điền, Quận 2, TP. Hồ Chí Minh</span
+                      >
+                    </div>
+                  </div>
+                </a>
+                <!-- end thong tin tung rap -->
+                <!-- thong tin tung rap -->
+                <a class="nav-item nav-link" data-toggle="tab" href="#cgv-2">
+                  <div class="theater__details--item">
+                    <img
+                      class="theater__image"
+                      src="./images/theater.jpg"
+                      alt=""
+                    />
+                    <div class="wrapInfo">
+                      <span class="chiNhanh">
+                        <span class="tenRap CGV">CGV</span> - Thảo Điền Pearl
+                      </span>
+                      <span class="diaChi"
+                        >Tầng 2, Thảo Điền Mall, 12 Quốc Hương, Phường Thảo
+                        Điền, Quận 2, TP. Hồ Chí Minh</span
+                      >
+                    </div>
+                  </div>
+                </a>
+                <!-- end thong tin tung rap -->
+                <!-- thong tin tung rap -->
+                <a class="nav-item nav-link" data-toggle="tab" href="#cgv-3">
+                  <div class="theater__details--item">
+                    <img
+                      class="theater__image"
+                      src="./images/theater.jpg"
+                      alt=""
+                    />
+                    <div class="wrapInfo">
+                      <span class="chiNhanh">
+                        <span class="tenRap CGV">CGV</span> - Thảo Điền Pearl
+                      </span>
+                      <span class="diaChi"
+                        >Tầng 2, Thảo Điền Mall, 12 Quốc Hương, Phường Thảo
+                        Điền, Quận 2, TP. Hồ Chí Minh</span
+                      >
+                    </div>
+                  </div>
+                </a>
+                <!-- end thong tin tung rap -->
+                <!-- thong tin tung rap -->
+                <a class="nav-item nav-link" data-toggle="tab" href="#cgv-4">
+                  <div class="theater__details--item">
+                    <img
+                      class="theater__image"
+                      src="./images/theater.jpg"
+                      alt=""
+                    />
+                    <div class="wrapInfo">
+                      <span class="chiNhanh">
+                        <span class="tenRap CGV">CGV</span> - Thảo Điền Pearl
+                      </span>
+                      <span class="diaChi"
+                        >Tầng 2, Thảo Điền Mall, 12 Quốc Hương, Phường Thảo
+                        Điền, Quận 2, TP. Hồ Chí Minh</span
+                      >
+                    </div>
+                  </div>
+                </a>
+                <!-- end thong tin tung rap -->
+              </div>
+            </div>
+
+            <div class="tab-pane fade" id="bhd">
+              <div class="nav nav-tabs">
+                <!-- thong tin tung rap -->
+                <a class="nav-item nav-link" data-toggle="tab" href="#bhd-1">
+                  <div class="theater__details--item">
+                    <img
+                      class="theater__image"
+                      src="./images/theater.jpg"
+                      alt=""
+                    />
+                    <div class="wrapInfo">
+                      <span class="chiNhanh">
+                        <span class="tenRap CGV">CGV</span> - Thảo Điền Pearl
+                      </span>
+                      <span class="diaChi"
+                        >Tầng 2, Thảo Điền Mall, 12 Quốc Hương, Phường Thảo
+                        Điền, Quận 2, TP. Hồ Chí Minh</span
+                      >
+                    </div>
+                  </div>
+                </a>
+                <!-- end thong tin tung rap -->
+                <!-- thong tin tung rap -->
+                <a class="nav-item nav-link" data-toggle="tab" href="#bhd-2">
+                  <div class="theater__details--item">
+                    <img
+                      class="theater__image"
+                      src="./images/theater.jpg"
+                      alt=""
+                    />
+                    <div class="wrapInfo">
+                      <span class="chiNhanh">
+                        <span class="tenRap CGV">CGV</span> - Thảo Điền Pearl
+                      </span>
+                      <span class="diaChi"
+                        >Tầng 2, Thảo Điền Mall, 12 Quốc Hương, Phường Thảo
+                        Điền, Quận 2, TP. Hồ Chí Minh</span
+                      >
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="galaxy">
+              this is galaxy
+            </div>
+          </div>
+
+          <!-- MOVIE LIST -->
+          <div class="tab-content theater__movies">
+            <div class="tab-pane fade show active" id="cgv-1">
+              <!-- Movie item -->
+              <div class="theater__movies--item">
+                <div
+                  class="theater__movies--item--info"
+                  data-toggle="collapse"
+                  data-target="#cgv-1-time"
+                >
+                  <img class="theater__image" src="./images/theater.jpg" />
+                  <div class="wrapInfo">
+                    <span class="movieName">
+                      <span class="showing__age">C13</span> - Gia Tài Tội Lỗi
+                    </span>
+                    <span class="movieDetail">116 phút - TIX 8.6 - IMDb 0</span>
+                  </div>
+                </div>
+                <div class="row pt-3 collapse show timeList" id="cgv-1-time">
+                  <a href="#" class="btn btn-time">13:20</a>
+                  <a href="#" class="btn btn-time">13:20</a>
+                  <a href="#" class="btn btn-time">13:20</a>
+                  <a href="#" class="btn btn-time">13:20</a>
+                  <a href="#" class="btn btn-time">13:20</a>
+                </div>
+              </div>
+              <!-- Movie item -->
+              <div class="theater__movies--item">
+                <div
+                  class="theater__movies--item--info"
+                  data-toggle="collapse"
+                  data-target="#cgv-2-time"
+                >
+                  <img class="theater__image" src="./images/theater.jpg" />
+                  <div class="wrapInfo">
+                    <span class="movieName">
+                      <span class="showing__age">C13</span> - Gia Tài Tội Lỗi
+                    </span>
+                    <span class="movieDetail">116 phút - TIX 8.6 - IMDb 0</span>
+                  </div>
+                </div>
+                <div class="row pt-3 collapse show timeList" id="cgv-2-time">
+                  <a href="#" class="btn btn-time">13:20</a>
+                  <a href="#" class="btn btn-time">13:20</a>
+                  <a href="#" class="btn btn-time">13:20</a>
+                  <a href="#" class="btn btn-time">13:20</a>
+                  <a href="#" class="btn btn-time">13:20</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-pane fade" id="cgv-2">
+              <div>film 4</div>
+              <div>film 5</div>
+              <div>film 6</div>
+              <div>film 7</div>
+            </div>
+
+            <!-- bhd -->
+            <div class="tab-pane fade" id="bhd-1">
+              <!-- Movie item -->
+              <div class="theater__movies--item">
+                <div
+                  class="theater__movies--item--info"
+                  data-toggle="collapse"
+                  data-target="#cgv-2-time"
+                >
+                  <img class="theater__image" src="./images/theater.jpg" />
+                  <div class="wrapInfo">
+                    <span class="movieName">
+                      <span class="showing__age">C13</span> - Gia Tài Tội Lỗi
+                    </span>
+                    <span class="movieDetail">116 phút - TIX 8.6 - IMDb 0</span>
+                  </div>
+                </div>
+                <div class="row pt-3 collapse show timeList" id="cgv-2-time">
+                  <a href="#" class="btn btn-time">13:20</a>
+                  <a href="#" class="btn btn-time">13:20</a>
+                  <a href="#" class="btn btn-time">13:20</a>
+                  <a href="#" class="btn btn-time">13:20</a>
+                  <a href="#" class="btn btn-time">13:20</a>
+                </div>
               </div>
             </div>
           </div>
@@ -2130,7 +2585,73 @@
       </div>
     </section>
     <!-- FOOTER -->
-    <footer class="footer"></footer>
+    <footer class="footer">
+      <div class="myContainer">
+        <div class="footer__top">
+          <p class="footer__top--title">
+            <a href="#!">Bạn có câu hỏi? Liên hệ với chúng tôi.</a>
+          </p>
+          <ul class="footer__list">
+            <li class="footer__item"><a href="#!">Câu hỏi thường gặp</a></li>
+            <li class="footer__item"><a href="#!">Trung tâm trợ giúp</a></li>
+            <li class="footer__item"><a href="#!">Tài khoản</a></li>
+            <li class="footer__item">
+              <a href="#!">Quan hệ với nhà đầu tư</a>
+            </li>
+            <li class="footer__item"><a href="#!">Việc làm</a></li>
+            <li class="footer__item"><a href="#!">Điều khoản sử dụng</a></li>
+            <li class="footer__item"><a href="#!">Quyền riêng tư</a></li>
+            <li class="footer__item"><a href="#!">Tùy chọn cookie</a></li>
+            <li class="footer__item"><a href="#!">Thông tin đối tác</a></li>
+            <li class="footer__item">
+              <a href="#!">Liên hệ với chúng tôi </a>
+            </li>
+            <li class="footer__item"><a href="#!">Thông báo pháp lý</a></li>
+          </ul>
+        </div>
+        <div class="footer__bottom">
+          <div class="row">
+            <div class="col-md-1 text-center text-md-left mb-3">
+              <a href="#!">
+                <img class="imgZion" src="./images/coop20.jpg" alt="zion" />
+              </a>
+            </div>
+            <div class="col-md-9 text-md-left text-center">
+              <span>TIX – SẢN PHẨM CỦA CÔNG TY CỔ PHẦN ZION</span>
+              <span>
+                Địa chỉ: Z06 Đường số 13, Phường Tân Thuận Đông, Quận 7, Tp. Hồ
+                Chí Minh, Việt Nam.
+              </span>
+              <span>
+                Giấy chứng nhận đăng ký kinh doanh số: 0101659783,<br />
+                đăng ký thay đổi lần thứ 30, ngày 22 tháng 01 năm 2020 do Sở kế
+                hoạch và đầu tư Thành phố Hồ Chí Minh cấp.
+              </span>
+              <span>
+                Số Điện Thoại (Hotline): 1900 545 436
+              </span>
+              <span>
+                Email:
+                <a href="#!">support@tix.vn</a>
+              </span>
+              <span>
+                * Đây là trang web đc clone bởi Khuất Duy Quang với mục đích học
+                tập.
+              </span>
+            </div>
+            <div class="col-md-2 text-center text-md-right mt-3 mt-md-0">
+              <a href="#!">
+                <img
+                  class="imgBCT"
+                  src="./images/bocongthuong.png"
+                  alt="bocongthuong"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script
@@ -2219,6 +2740,43 @@
           // document.querySelector("#coming .slick-prev").click();
           $("#showing").slick("slickNext");
         });
+    </script>
+    <script type="module" src="./js/main.js"></script>
+    <script>
+      //khi bam vao logo thi se tu dong (wait 0.5s) bam vao link dau tien co .active
+      const imgs = document.querySelectorAll(".theater__logos .nav-link");
+      function setTimeClick() {
+        //xoa het class acctive cua link
+        document
+          .querySelectorAll(".theater__details .tab-pane .nav-link")
+          .forEach((link) => {
+            link.classList.remove("active");
+          });
+        // 0.5s sau click vao link (se tu them class active da xoa vao phan tu dau tien cua pane co class active (do lick vao tam hinh))
+        setTimeout(() => {
+          document
+            .querySelectorAll(".theater__details .tab-pane")
+            .forEach((tab) => {
+              if (tab.classList.contains("active")) {
+                console.log(tab.firstElementChild.firstElementChild);
+
+                tab.firstElementChild.firstElementChild.click();
+              }
+            });
+        }, 500);
+      }
+
+      imgs.forEach((img) => {
+        img.addEventListener("click", () => {
+          setTimeClick();
+        });
+      });
+
+      // $("theater__logos a").click(function () {
+      //   console.log($(".theater__details .active .nav-link"));
+
+      //   $(".theater__details .active .nav-link").click();
+      // });
     </script>
   </body>
 </html>

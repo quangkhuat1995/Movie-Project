@@ -17,3 +17,15 @@
   background-size: contain;
   background-repeat: no-repeat;
 }
+
+%showAge {
+  display: inline-block;
+  text-align: center;
+  min-width: 30px;
+  border-radius: $border-radius;
+  background: $color-red-primary;
+  @include styleText($color-white-0, $fs-14);
+  padding: 0 $sp-5;
+  margin-right: 8px;
+  font-weight: 600;
+}

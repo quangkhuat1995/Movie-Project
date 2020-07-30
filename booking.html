@@ -17,15 +17,17 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="./css/main.css" />
-    <link rel="stylesheet" href="./css/booking.css" />
   </head>
   <body>
     <div class="body-wrap">
       <!-- PROCESS -->
       <section id="process-section">
         <div id="btnBack" onclick="turnback()">
+          <img src="./images/back-session.png" alt="" />
+        </div>
+        <div id="btnLogo">
           <a href="index.html">
-            <img src="./images/back-session.png" alt="" />
+            <img src="./images/logo.png" alt="" />
           </a>
         </div>
         <ul class="process__list">
@@ -37,9 +39,6 @@
           </li>
           <li class="process__item" data-process="payticket">
             <span>02</span> Thanh Toán
-          </li>
-          <li class="process__item" data-process="showresult">
-            <span>03</span> Kết quả đặt vé
           </li>
         </ul>
 
@@ -269,8 +268,8 @@
           </div>
           <div class="pay__item--wrapper">
             <div class="showday row">
-              <div class="col-5">Ngày giờ chiếu:</div>
-              <div class="col-7 text-right font-weight-bold">
+              <div class="col-6">Ngày giờ chiếu:</div>
+              <div class="col-6 text-right font-weight-bold">
                 <span id="date">25/06/2020</span>
                 -
                 <span id="time">20:20</span>
@@ -387,9 +386,9 @@
               </div>
             </div>
           </div>
-          <!-- <div class="confirm__item" id="btnPayMoney" data-goto="pay">
+          <div class="confirm__item btnPayMoney--desk" data-goto="pay">
             Thanh Toán
-          </div> -->
+          </div>
         </div>
       </aside>
       <!-- CONFIRM -->
@@ -399,12 +398,17 @@
           <div class="col-6 confirm__item" id="btnGoNext" data-goto="next">
             Tiếp tục
           </div>
-          <div class="col-6 confirm__item" id="btnPayMoney" data-goto="pay">
+          <div
+            class="col-6 confirm__item btnPayMoney"
+            id="btnPayMoney"
+            data-goto="pay"
+          >
             Thanh Toán
           </div>
         </div>
       </section>
     </div>
+    <div class="preload"></div>
     <script src="./js/Seat.js"></script>
     <script src="./js/User.js"></script>
     <script src="./js/SeatManagement.js"></script>

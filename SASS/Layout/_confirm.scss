@@ -21,6 +21,12 @@
       cursor: pointer;
       @include styleText($color-white-0, $fs-18);
       background: $color-choosing;
+      &.btnPayMoney--desk {
+        display: none;
+        @include RESPONSIVE("768px") {
+          display: block;
+        }
+      }
     }
     #showseat {
       @include styleText($color-choosing, $fs-16);
@@ -29,7 +35,7 @@
       font-weight: 600;
       cursor: unset;
     }
-    #btnPayMoney {
+    .btnPayMoney {
       display: none;
     }
   }

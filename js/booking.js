@@ -88,6 +88,7 @@ function showClickedSeat(id) {
 getEle("btnGoNext").addEventListener("click", function () {
   getEle("seat-section").style.display = "none";
   getEle("pay-section").style.display = "block";
+  getEle("btnBack").style.display = "block";
   // this.innerHTML = "Thanh Toán";
   // this.dataset.goto = "pay";
   this.style.display = "none";
@@ -95,8 +96,6 @@ getEle("btnGoNext").addEventListener("click", function () {
 
   //scroll UI to top
   window.scrollTo(0, 0);
-
-  getEle("btnBack").firstElementChild.setAttribute("href", "#process-section");
 
   getEle("btnBack").addEventListener("click", function (e) {
     getEle("seat-section").style.display = "block";
@@ -107,13 +106,11 @@ getEle("btnGoNext").addEventListener("click", function () {
     //scroll UI to top
 
     window.scrollTo(0, 0);
-
-    // e.preventDefault();
-    setTimeout(function () {
-      getEle("btnBack").firstElementChild.setAttribute("href", "./index.html");
-    }, 500);
   });
-  window.scrollTo(0, 0);
-
-  console.log(this);
 });
+
+//always show when resize
+// window.addEventListener("resize", () => {
+//   getEle("seat-section").style.display = "block";
+//   getEle("pay-section").style.display = "block";
+// });
