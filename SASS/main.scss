@@ -23,6 +23,7 @@
 */
 @import "./Layout/header";
 @import "./Layout/carousel";
+@import "./Layout/search";
 @import "./Layout/showtime";
 @import "./Layout/newsblock";
 @import "./Layout/ads";
@@ -45,3 +46,5 @@
 @import "./Component/main-title-detail";
 @import "./Component/preload";
 @import "./Component/formInput";
+
+@import "./Component/testing";

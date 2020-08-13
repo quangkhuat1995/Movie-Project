@@ -300,6 +300,94 @@ p {
   opacity: 0.7;
 }
 
+.search {
+  transform: translateY(-90%);
+  height: 80px;
+  background: #fff;
+  border-radius: 5px;
+  display: none;
+}
+
+@media screen and (min-width: 992px) {
+  .search {
+    display: block;
+  }
+}
+
+.search__form {
+  display: flex;
+  height: 100%;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.search__group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: calc(70% / 4);
+  border-radius: 5px;
+}
+
+.search__group select {
+  appearance: none;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.search__group select option {
+  border: 1px solid #e4e4e4;
+}
+
+.search__group::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 50%;
+  background-color: #e4e4e4;
+}
+
+.search__group::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  background: url("./../../images/dropdown-icon.png") center center/contain no-repeat;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  pointer-events: none;
+}
+
+.search__name {
+  width: 30%;
+}
+
+.search__button .btnBuyTicket {
+  width: unset;
+  height: unset;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.search__button .btnBuyTicket:hover {
+  font-size: 14px;
+}
+
+.search__button::before, .search__button::after {
+  display: none;
+}
+
 .showtime__panel .panel__container {
   display: flex !important;
   flex-wrap: wrap;
@@ -311,206 +399,6 @@ p {
 
 .movieThumbnail .playBtn__overlay {
   display: none;
-}
-
-.movieThumbnail__img .dang0 {
-  background: url("../../images/dang0.jpg") center center/cover, url("../../images/dang0.png") center center/cover;
-}
-
-.movieThumbnail__img .dang1 {
-  background: url("../../images/dang1.jpg") center center/cover, url("../../images/dang1.png") center center/cover;
-}
-
-.movieThumbnail__img .dang2 {
-  background: url("../../images/dang2.jpg") center center/cover, url("../../images/dang2.png") center center/cover;
-}
-
-.movieThumbnail__img .dang3 {
-  background: url("../../images/dang3.jpg") center center/cover, url("../../images/dang3.png") center center/cover;
-}
-
-.movieThumbnail__img .dang4 {
-  background: url("../../images/dang4.jpg") center center/cover, url("../../images/dang4.png") center center/cover;
-}
-
-.movieThumbnail__img .dang5 {
-  background: url("../../images/dang5.jpg") center center/cover, url("../../images/dang5.png") center center/cover;
-}
-
-.movieThumbnail__img .dang6 {
-  background: url("../../images/dang6.jpg") center center/cover, url("../../images/dang6.png") center center/cover;
-}
-
-.movieThumbnail__img .dang7 {
-  background: url("../../images/dang7.jpg") center center/cover, url("../../images/dang7.png") center center/cover;
-}
-
-.movieThumbnail__img .dang8 {
-  background: url("../../images/dang8.jpg") center center/cover, url("../../images/dang8.png") center center/cover;
-}
-
-.movieThumbnail__img .dang9 {
-  background: url("../../images/dang9.jpg") center center/cover, url("../../images/dang9.png") center center/cover;
-}
-
-.movieThumbnail__img .dang10 {
-  background: url("../../images/dang10.jpg") center center/cover, url("../../images/dang10.png") center center/cover;
-}
-
-.movieThumbnail__img .dang11 {
-  background: url("../../images/dang11.jpg") center center/cover, url("../../images/dang11.png") center center/cover;
-}
-
-.movieThumbnail__img .dang12 {
-  background: url("../../images/dang12.jpg") center center/cover, url("../../images/dang12.png") center center/cover;
-}
-
-.movieThumbnail__img .dang13 {
-  background: url("../../images/dang13.jpg") center center/cover, url("../../images/dang13.png") center center/cover;
-}
-
-.movieThumbnail__img .dang14 {
-  background: url("../../images/dang14.jpg") center center/cover, url("../../images/dang14.png") center center/cover;
-}
-
-.movieThumbnail__img .dang15 {
-  background: url("../../images/dang15.jpg") center center/cover, url("../../images/dang15.png") center center/cover;
-}
-
-.movieThumbnail__img .dang16 {
-  background: url("../../images/dang16.jpg") center center/cover, url("../../images/dang16.png") center center/cover;
-}
-
-.movieThumbnail__img .dang17 {
-  background: url("../../images/dang17.jpg") center center/cover, url("../../images/dang17.png") center center/cover;
-}
-
-.movieThumbnail__img .dang18 {
-  background: url("../../images/dang18.jpg") center center/cover, url("../../images/dang18.png") center center/cover;
-}
-
-.movieThumbnail__img .dang19 {
-  background: url("../../images/dang19.jpg") center center/cover, url("../../images/dang19.png") center center/cover;
-}
-
-.movieThumbnail__img .dang20 {
-  background: url("../../images/dang20.jpg") center center/cover, url("../../images/dang20.png") center center/cover;
-}
-
-.movieThumbnail__img .dang21 {
-  background: url("../../images/dang21.jpg") center center/cover, url("../../images/dang21.png") center center/cover;
-}
-
-.movieThumbnail__img .dang22 {
-  background: url("../../images/dang22.jpg") center center/cover, url("../../images/dang22.png") center center/cover;
-}
-
-.movieThumbnail__img .dang23 {
-  background: url("../../images/dang23.jpg") center center/cover, url("../../images/dang23.png") center center/cover;
-}
-
-.movieThumbnail__img .dang24 {
-  background: url("../../images/dang24.jpg") center center/cover, url("../../images/dang24.png") center center/cover;
-}
-
-.movieThumbnail__img .sap0 {
-  background: url("../../images/sap0.jpg") center center/cover, url("../../images/sap0.png") center center/cover;
-}
-
-.movieThumbnail__img .sap1 {
-  background: url("../../images/sap1.jpg") center center/cover, url("../../images/sap1.png") center center/cover;
-}
-
-.movieThumbnail__img .sap2 {
-  background: url("../../images/sap2.jpg") center center/cover, url("../../images/sap2.png") center center/cover;
-}
-
-.movieThumbnail__img .sap3 {
-  background: url("../../images/sap3.jpg") center center/cover, url("../../images/sap3.png") center center/cover;
-}
-
-.movieThumbnail__img .sap4 {
-  background: url("../../images/sap4.jpg") center center/cover, url("../../images/sap4.png") center center/cover;
-}
-
-.movieThumbnail__img .sap5 {
-  background: url("../../images/sap5.jpg") center center/cover, url("../../images/sap5.png") center center/cover;
-}
-
-.movieThumbnail__img .sap6 {
-  background: url("../../images/sap6.jpg") center center/cover, url("../../images/sap6.png") center center/cover;
-}
-
-.movieThumbnail__img .sap7 {
-  background: url("../../images/sap7.jpg") center center/cover, url("../../images/sap7.png") center center/cover;
-}
-
-.movieThumbnail__img .sap8 {
-  background: url("../../images/sap8.jpg") center center/cover, url("../../images/sap8.png") center center/cover;
-}
-
-.movieThumbnail__img .sap9 {
-  background: url("../../images/sap9.jpg") center center/cover, url("../../images/sap9.png") center center/cover;
-}
-
-.movieThumbnail__img .sap10 {
-  background: url("../../images/sap10.jpg") center center/cover, url("../../images/sap10.png") center center/cover;
-}
-
-.movieThumbnail__img .sap11 {
-  background: url("../../images/sap11.jpg") center center/cover, url("../../images/sap11.png") center center/cover;
-}
-
-.movieThumbnail__img .sap12 {
-  background: url("../../images/sap12.jpg") center center/cover, url("../../images/sap12.png") center center/cover;
-}
-
-.movieThumbnail__img .sap13 {
-  background: url("../../images/sap13.jpg") center center/cover, url("../../images/sap13.png") center center/cover;
-}
-
-.movieThumbnail__img .sap14 {
-  background: url("../../images/sap14.jpg") center center/cover, url("../../images/sap14.png") center center/cover;
-}
-
-.movieThumbnail__img .sap15 {
-  background: url("../../images/sap15.jpg") center center/cover, url("../../images/sap15.png") center center/cover;
-}
-
-.movieThumbnail__img .sap16 {
-  background: url("../../images/sap16.jpg") center center/cover, url("../../images/sap16.png") center center/cover;
-}
-
-.movieThumbnail__img .sap17 {
-  background: url("../../images/sap17.jpg") center center/cover, url("../../images/sap17.png") center center/cover;
-}
-
-.movieThumbnail__img .sap18 {
-  background: url("../../images/sap18.jpg") center center/cover, url("../../images/sap18.png") center center/cover;
-}
-
-.movieThumbnail__img .sap19 {
-  background: url("../../images/sap19.jpg") center center/cover, url("../../images/sap19.png") center center/cover;
-}
-
-.movieThumbnail__img .sap20 {
-  background: url("../../images/sap20.jpg") center center/cover, url("../../images/sap20.png") center center/cover;
-}
-
-.movieThumbnail__img .sap21 {
-  background: url("../../images/sap21.jpg") center center/cover, url("../../images/sap21.png") center center/cover;
-}
-
-.movieThumbnail__img .sap22 {
-  background: url("../../images/sap22.jpg") center center/cover, url("../../images/sap22.png") center center/cover;
-}
-
-.movieThumbnail__img .sap23 {
-  background: url("../../images/sap23.jpg") center center/cover, url("../../images/sap23.png") center center/cover;
-}
-
-.movieThumbnail__img .sap24 {
-  background: url("../../images/sap24.jpg") center center/cover, url("../../images/sap24.png") center center/cover;
 }
 
 .movieThumbnail .green {
@@ -593,6 +481,15 @@ p {
 
 .movieThumbnail .showing__point .star img {
   width: 8px;
+}
+
+#showing .movieThumbnail .publish__date, #showing .movieThumbnail .showing__point {
+  display: none;
+}
+
+#coming .movieThumbnail .playBtn__overlay,
+#coming .movieThumbnail .showing__point {
+  display: none;
 }
 
 @media screen and (min-width: 768px) {
@@ -2009,17 +1906,53 @@ p {
   }
 }
 
-.hero-detail .point {
-  display: inline-block;
+.hero-detail .circlePercent {
   height: 126px;
   width: 126px;
   border-radius: 50%;
-  line-height: 111px;
+  background-color: rgba(0, 0, 0, 0.6);
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-detail .circlePercent .circleBorder {
+  width: 111px;
+  height: 111px;
+  border-radius: 50%;
+  border: 7.5px solid #3a3a3a;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: content-box;
+}
+
+.hero-detail .circlePercent .point-group {
+  width: 126px;
+  height: 126px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.hero-detail .circlePercent .point-group .bar {
+  width: 111px;
+  height: 111px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 7.5px solid #44c020;
+  box-sizing: content-box;
+}
+
+.hero-detail .circlePercent .point {
   color: #e9e9e9;
   font-size: 3rem;
-  text-align: center;
-  border: 7.5px solid #44c020;
-  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .hero-detail .danhGia {
@@ -2313,206 +2246,6 @@ p {
   border-radius: 4px;
 }
 
-.movieThumbnail__img .dang0 {
-  background: url("../../images/dang0.jpg") center center/cover, url("../../images/dang0.png") center center/cover;
-}
-
-.movieThumbnail__img .dang1 {
-  background: url("../../images/dang1.jpg") center center/cover, url("../../images/dang1.png") center center/cover;
-}
-
-.movieThumbnail__img .dang2 {
-  background: url("../../images/dang2.jpg") center center/cover, url("../../images/dang2.png") center center/cover;
-}
-
-.movieThumbnail__img .dang3 {
-  background: url("../../images/dang3.jpg") center center/cover, url("../../images/dang3.png") center center/cover;
-}
-
-.movieThumbnail__img .dang4 {
-  background: url("../../images/dang4.jpg") center center/cover, url("../../images/dang4.png") center center/cover;
-}
-
-.movieThumbnail__img .dang5 {
-  background: url("../../images/dang5.jpg") center center/cover, url("../../images/dang5.png") center center/cover;
-}
-
-.movieThumbnail__img .dang6 {
-  background: url("../../images/dang6.jpg") center center/cover, url("../../images/dang6.png") center center/cover;
-}
-
-.movieThumbnail__img .dang7 {
-  background: url("../../images/dang7.jpg") center center/cover, url("../../images/dang7.png") center center/cover;
-}
-
-.movieThumbnail__img .dang8 {
-  background: url("../../images/dang8.jpg") center center/cover, url("../../images/dang8.png") center center/cover;
-}
-
-.movieThumbnail__img .dang9 {
-  background: url("../../images/dang9.jpg") center center/cover, url("../../images/dang9.png") center center/cover;
-}
-
-.movieThumbnail__img .dang10 {
-  background: url("../../images/dang10.jpg") center center/cover, url("../../images/dang10.png") center center/cover;
-}
-
-.movieThumbnail__img .dang11 {
-  background: url("../../images/dang11.jpg") center center/cover, url("../../images/dang11.png") center center/cover;
-}
-
-.movieThumbnail__img .dang12 {
-  background: url("../../images/dang12.jpg") center center/cover, url("../../images/dang12.png") center center/cover;
-}
-
-.movieThumbnail__img .dang13 {
-  background: url("../../images/dang13.jpg") center center/cover, url("../../images/dang13.png") center center/cover;
-}
-
-.movieThumbnail__img .dang14 {
-  background: url("../../images/dang14.jpg") center center/cover, url("../../images/dang14.png") center center/cover;
-}
-
-.movieThumbnail__img .dang15 {
-  background: url("../../images/dang15.jpg") center center/cover, url("../../images/dang15.png") center center/cover;
-}
-
-.movieThumbnail__img .dang16 {
-  background: url("../../images/dang16.jpg") center center/cover, url("../../images/dang16.png") center center/cover;
-}
-
-.movieThumbnail__img .dang17 {
-  background: url("../../images/dang17.jpg") center center/cover, url("../../images/dang17.png") center center/cover;
-}
-
-.movieThumbnail__img .dang18 {
-  background: url("../../images/dang18.jpg") center center/cover, url("../../images/dang18.png") center center/cover;
-}
-
-.movieThumbnail__img .dang19 {
-  background: url("../../images/dang19.jpg") center center/cover, url("../../images/dang19.png") center center/cover;
-}
-
-.movieThumbnail__img .dang20 {
-  background: url("../../images/dang20.jpg") center center/cover, url("../../images/dang20.png") center center/cover;
-}
-
-.movieThumbnail__img .dang21 {
-  background: url("../../images/dang21.jpg") center center/cover, url("../../images/dang21.png") center center/cover;
-}
-
-.movieThumbnail__img .dang22 {
-  background: url("../../images/dang22.jpg") center center/cover, url("../../images/dang22.png") center center/cover;
-}
-
-.movieThumbnail__img .dang23 {
-  background: url("../../images/dang23.jpg") center center/cover, url("../../images/dang23.png") center center/cover;
-}
-
-.movieThumbnail__img .dang24 {
-  background: url("../../images/dang24.jpg") center center/cover, url("../../images/dang24.png") center center/cover;
-}
-
-.movieThumbnail__img .sap0 {
-  background: url("../../images/sap0.jpg") center center/cover, url("../../images/sap0.png") center center/cover;
-}
-
-.movieThumbnail__img .sap1 {
-  background: url("../../images/sap1.jpg") center center/cover, url("../../images/sap1.png") center center/cover;
-}
-
-.movieThumbnail__img .sap2 {
-  background: url("../../images/sap2.jpg") center center/cover, url("../../images/sap2.png") center center/cover;
-}
-
-.movieThumbnail__img .sap3 {
-  background: url("../../images/sap3.jpg") center center/cover, url("../../images/sap3.png") center center/cover;
-}
-
-.movieThumbnail__img .sap4 {
-  background: url("../../images/sap4.jpg") center center/cover, url("../../images/sap4.png") center center/cover;
-}
-
-.movieThumbnail__img .sap5 {
-  background: url("../../images/sap5.jpg") center center/cover, url("../../images/sap5.png") center center/cover;
-}
-
-.movieThumbnail__img .sap6 {
-  background: url("../../images/sap6.jpg") center center/cover, url("../../images/sap6.png") center center/cover;
-}
-
-.movieThumbnail__img .sap7 {
-  background: url("../../images/sap7.jpg") center center/cover, url("../../images/sap7.png") center center/cover;
-}
-
-.movieThumbnail__img .sap8 {
-  background: url("../../images/sap8.jpg") center center/cover, url("../../images/sap8.png") center center/cover;
-}
-
-.movieThumbnail__img .sap9 {
-  background: url("../../images/sap9.jpg") center center/cover, url("../../images/sap9.png") center center/cover;
-}
-
-.movieThumbnail__img .sap10 {
-  background: url("../../images/sap10.jpg") center center/cover, url("../../images/sap10.png") center center/cover;
-}
-
-.movieThumbnail__img .sap11 {
-  background: url("../../images/sap11.jpg") center center/cover, url("../../images/sap11.png") center center/cover;
-}
-
-.movieThumbnail__img .sap12 {
-  background: url("../../images/sap12.jpg") center center/cover, url("../../images/sap12.png") center center/cover;
-}
-
-.movieThumbnail__img .sap13 {
-  background: url("../../images/sap13.jpg") center center/cover, url("../../images/sap13.png") center center/cover;
-}
-
-.movieThumbnail__img .sap14 {
-  background: url("../../images/sap14.jpg") center center/cover, url("../../images/sap14.png") center center/cover;
-}
-
-.movieThumbnail__img .sap15 {
-  background: url("../../images/sap15.jpg") center center/cover, url("../../images/sap15.png") center center/cover;
-}
-
-.movieThumbnail__img .sap16 {
-  background: url("../../images/sap16.jpg") center center/cover, url("../../images/sap16.png") center center/cover;
-}
-
-.movieThumbnail__img .sap17 {
-  background: url("../../images/sap17.jpg") center center/cover, url("../../images/sap17.png") center center/cover;
-}
-
-.movieThumbnail__img .sap18 {
-  background: url("../../images/sap18.jpg") center center/cover, url("../../images/sap18.png") center center/cover;
-}
-
-.movieThumbnail__img .sap19 {
-  background: url("../../images/sap19.jpg") center center/cover, url("../../images/sap19.png") center center/cover;
-}
-
-.movieThumbnail__img .sap20 {
-  background: url("../../images/sap20.jpg") center center/cover, url("../../images/sap20.png") center center/cover;
-}
-
-.movieThumbnail__img .sap21 {
-  background: url("../../images/sap21.jpg") center center/cover, url("../../images/sap21.png") center center/cover;
-}
-
-.movieThumbnail__img .sap22 {
-  background: url("../../images/sap22.jpg") center center/cover, url("../../images/sap22.png") center center/cover;
-}
-
-.movieThumbnail__img .sap23 {
-  background: url("../../images/sap23.jpg") center center/cover, url("../../images/sap23.png") center center/cover;
-}
-
-.movieThumbnail__img .sap24 {
-  background: url("../../images/sap24.jpg") center center/cover, url("../../images/sap24.png") center center/cover;
-}
-
 .main-title-detail .title {
   color: #e9e9e9;
   font-size: 20px;
@@ -2588,5 +2321,173 @@ p {
 
 .formsection #tbphone {
   display: none;
+}
+
+#header {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: auto;
+}
+
+#header .header {
+  min-height: 8vh;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+#header .header .nav-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0 10px;
+}
+
+#header .header .nav-bar .nav-list ul {
+  list-style: none;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  position: fixed;
+  width: 30vw;
+  min-width: 50%;
+  height: 100vh;
+  background-color: rgba(233, 233, 233, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  transform: translateX(100%);
+  transition: 0.3s ease all;
+}
+
+#header .header .nav-bar .nav-list ul.active {
+  transform: translateX(0);
+}
+
+#header .header .nav-bar .nav-list ul.active::after {
+  content: "";
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+  pointer-events: all;
+}
+
+#header .header .nav-bar .nav-list ul a {
+  font-weight: 500;
+  letter-spacing: 0.2rem;
+  text-decoration: none;
+  color: #333;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  padding: 20px;
+  display: block;
+}
+
+#header .header .nav-bar .nav-list ul a::after {
+  content: attr(data-after);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  color: #333;
+  font-size: 13rem;
+  opacity: 0.5;
+  letter-spacing: 50px;
+  z-index: -1;
+  transition: 0.3s ease letter-spacing;
+}
+
+#header .header .nav-bar .nav-list ul li:hover a {
+  color: #fb4226;
+}
+
+#header .header .nav-bar .nav-list ul li:hover a::after {
+  transform: translate(-50%, -50%) scale(1);
+  letter-spacing: initial;
+}
+
+#header .hamburger {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  display: inline-block;
+  border: 3px solid #333;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  cursor: pointer;
+}
+
+#header .hamburger .bar {
+  height: 2px;
+  width: 30px;
+  position: absolute;
+  background-color: #333;
+  z-index: -1;
+}
+
+#header .hamburger .bar::after, #header .hamburger .bar::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #333;
+  transition: 0.3 ease;
+  transition-property: top, bottom;
+}
+
+#header .hamburger .bar::after {
+  top: 8px;
+}
+
+#header .hamburger .bar::before {
+  bottom: 8px;
+}
+
+#header .hamburger.active .bar::after, #header .hamburger.active .bar::before {
+  top: 0;
+  bottom: 0;
+}
+
+@media screen and (min-width: 768px) {
+  #header .hamburger {
+    display: none;
+  }
+  #header .header .nav-bar .nav-list ul {
+    position: initial;
+    display: block;
+    height: auto;
+    width: fit-content;
+    background: transparent;
+    transform: translate(0);
+  }
+  #header .header .nav-bar .nav-list ul::after {
+    display: none;
+  }
+  #header .header .nav-bar .nav-list ul li {
+    display: inline-block;
+  }
+  #header .header .nav-bar .nav-list ul li a {
+    font-size: 1.8rem;
+  }
+  #header .header .nav-bar .nav-list ul li a::after {
+    display: none;
+  }
 }
 /*# sourceMappingURL=main.css.map */

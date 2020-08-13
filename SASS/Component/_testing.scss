@@ -1,0 +1,165 @@
+#header {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: auto;
+  .header {
+    min-height: 8vh;
+    background: rgba($color: #fff, $alpha: 0.95);
+    .nav-bar {
+      @include displayFlex(space-between, center);
+      width: 100%;
+      height: 100%;
+      // max-width: 1300px;
+      padding: 0 10px;
+      .nav-list ul {
+        list-style: none;
+        margin: 0;
+        @include positionAbsolute(0, false, false, 0);
+        position: fixed;
+        // left: 100%; /*chuyen ra khoi mang hinh*/
+        width: 30vw; //chinh mobile 30vw
+        min-width: 50%;
+        height: 100vh;
+        background-color: transparentize($color: $color-white-1, $amount: 0.8);
+        @include displayFlex(center, center, column);
+        z-index: 2;
+        // overflow-x: hidden;
+        transform: translateX(100%);
+        transition: 0.3s ease all;
+
+        &.active {
+          // left: 0%;
+          // width: 30vw;
+          // min-width: 50vh;
+          transform: translateX(0);
+          // pointer-events: none;
+          // li {
+          //   pointer-events: all;
+          // }
+        }
+
+        &.active::after {
+          content: "";
+          z-index: 1;
+          background-color: transparentize($color: #000000, $amount: 0.8);
+          height: 100vh;
+          width: 100vw;
+          @include positionAbsolute(0, 0);
+          transform: translateX(-100%);
+          pointer-events: all; //de js co the click dc
+        }
+
+        a {
+          font-weight: 500;
+          letter-spacing: 0.2rem;
+          text-decoration: none;
+          @include styleText($color-black-0, 2.5rem);
+          text-transform: uppercase;
+          padding: 20px;
+          display: block;
+
+          &::after {
+            content: attr(data-after);
+            @include positionAbsolute(50%, 50%);
+            transform: translate(-50%, -50%) scale(0);
+            @include styleText($color-black-0, 13rem);
+            opacity: 0.5;
+            letter-spacing: 50px;
+            z-index: -1;
+            transition: 0.3s ease letter-spacing;
+          }
+        }
+        li:hover {
+          a {
+            color: $color-red-primary;
+            &::after {
+              transform: translate(-50%, -50%) scale(1);
+              letter-spacing: initial;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+#header {
+  .hamburger {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 3px solid $color-black-0;
+    position: relative;
+    @include displayFlex(center, center);
+
+    z-index: 100;
+    cursor: pointer;
+
+    .bar {
+      height: 2px;
+      width: 30px;
+      position: absolute;
+      background-color: $color-black-0;
+      z-index: -1;
+      &::after,
+      &::before {
+        content: "";
+        @include positionAbsolute(false, 0);
+        width: 100%;
+        height: 100%;
+        background-color: $color-black-0;
+        transition: 0.3 ease;
+        transition-property: top, bottom;
+      }
+      &::after {
+        top: 8px;
+      }
+      &::before {
+        bottom: 8px;
+      }
+    }
+
+    &.active {
+      .bar {
+        &::after,
+        &::before {
+          top: 0;
+          bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+#header {
+  @include RESPONSIVE("768px") {
+    .hamburger {
+      display: none;
+    }
+    .header .nav-bar .nav-list ul {
+      position: initial;
+      display: block;
+      height: auto;
+      width: fit-content;
+      background: transparent;
+      transform: translate(0);
+
+      &::after {
+        display: none;
+      }
+
+      li {
+        display: inline-block;
+        a {
+          font-size: 1.8rem;
+          &::after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test WEB Xem phim</title>
+    <!-- FONT AWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
+    />
+    <!-- BS4 -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <!-- SLICK CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
+    />
+    <!-- MAIN -->
+    <link rel="stylesheet" href="./css/main.css">
+  </head>
+  <body>
+    <!-- HEADER -->
+    
+    <header id="header">
+      <div class="containers header">
+        <div class="nav-bar">
+          <div class="brand">
+            <a href="#" id="hero">brandLogo</a>
+          </div>
+          <div class="nav-list">
+            <div class="hamburger">
+              <div class="bar"></div>
+            </div>
+            <ul>
+              <li><a href="#!" data-after="Home">Home</a></li>
+              <li><a href="#!!" data-after="About">About</a></li>
+              <li><a href="#!!!" data-after="Service">Serivie</a></li>
+              <li><a href="#!!!!" data-after="Something">Something</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+    </div>
+    <!-- CAROUSEL -->
+    <section class="carousel">
+      <!-- carousel item 1 -->
+      <div class="carousel__item">
+        <div class="carousel__img">
+          <a href="#!">
+            <img src="./images/hero1.jpg" alt="" />
+          </a>
+        </div>
+        <div class="playBtn__overlay">
+          <a href="#" class="play__link">
+            <img src="./images/play.png" alt="" />
+          </a>
+        </div>
+      </div>
+      <!-- carousel item 2 -->
+      <div class="carousel__item">
+        <div class="carousel__img">
+          <a href="#!">
+            <img src="./images/hero2.png" alt="" />
+          </a>
+        </div>
+        <div class="playBtn__overlay">
+          <a href="#" class="play__link">
+            <img src="./images/play.png" alt="" />
+          </a>
+        </div>
+      </div>
+      <!-- carousel item 3 -->
+      <div class="carousel__item">
+        <div class="carousel__img">
+          <a href="#!">
+            <img src="./images/hero3.png" alt="" />
+          </a>
+        </div>
+        <div class="playBtn__overlay">
+          <a href="#" class="play__link">
+            <img src="./images/play.png" alt="" />
+          </a>
+        </div>
+      </div>
+      <!-- carousel item 4 -->
+      <div class="carousel__item">
+        <div class="carousel__img">
+          <a href="#!">
+            <img src="./images/hero4.png" alt="" />
+          </a>
+        </div>
+        <div class="playBtn__overlay">
+          <a href="#" class="play__link">
+            <img src="./images/play.png" alt="" />
+          </a>
+        </div>
+      </div>
+    </section>
+   
+   
+  <div style="margin:500px"></div>
+   
+   
+    
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <!-- BS4 JS -->
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+
+  </body>
+  <script>
+    const hamburger = document.querySelector('.header .nav-bar .nav-list .hamburger');
+const mobile_menu = document.querySelector('.header .nav-bar .nav-list ul');
+const mobile_menu_active = document.querySelector('.header .nav-bar .nav-list ul.active');
+
+const menu_item = document.querySelectorAll('.header .nav-bar .nav-list ul li a');
+const header = document.querySelector('.header.containers');
+
+hamburger.addEventListener('click', () => {
+	hamburger.classList.toggle('active');
+	mobile_menu.classList.toggle('active');
+  if(hamburger.classList.contains("active")){
+    document.body.style.overflowY = "hidden"
+  }else{
+    document.body.style.overflowY = "initial"
+  }
+});
+
+mobile_menu.addEventListener("click",()=>{
+  if(mobile_menu.classList.contains("active")){
+    hamburger.click()
+  }
+})
+
+document.addEventListener('scroll', () => {
+	var scroll_position = window.scrollY;
+	if (scroll_position > 250) {
+		header.style.backgroundColor = 'rgba(255, 255, 255)';
+	} else {
+		header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+	}
+});
+
+// menu_item.forEach((item) => {
+// 	item.addEventListener('click', () => {
+// 		hamburger.classList.toggle('active');
+// 		mobile_menu.classList.toggle('active');
+// 	});
+// });
+  </script>
+</html>

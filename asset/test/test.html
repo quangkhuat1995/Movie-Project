@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .circleBorder {
+        width: 111px;
+        height: 111px;
+        border-radius: 50%;
+        border: 7.5px solid #3a3a3a;
+        position: absolute;
+        top: 0;
+        left: 0;
+        box-sizing: content-box;
+      }
+      .point-group {
+        width: 126px;
+        height: 126px;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      .bar {
+        width: 111px;
+        height: 111px;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 7.5px solid green;
+        box-sizing: content-box;
+        /* clip-path: polygon(0 0); */
+      }
+
+      .circlePercent {
+        height: 126px;
+        width: 126px;
+        border-radius: 50%;
+        background-color: rgba(17, 17, 17, 0.8);
+        margin: 0 auto;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .point {
+        font-size: 3rem;
+        color: #fafafa;
+      }
+    </style>
+  </head>
+  <body style="background: #000;">
+    <div class="col-3 text-center mx-auto">
+      <div class="circlePercent">
+        <div class="circleBorder"></div>
+        <div class="point-group">
+          <div class="bar" id="bar"></div>
+        </div>
+        <span class="point">7.7</span>
+      </div>
+      <p class="danhGia">188 người đánh giá</p>
+    </div>
+    <input id="inputPoint" width="250px" type="text" />
+    <button class="btn">click to change</button>
+    <script src="./test.js"></script>
+  </body>
+</html>

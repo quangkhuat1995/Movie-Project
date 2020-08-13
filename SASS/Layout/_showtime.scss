@@ -13,10 +13,6 @@
   .playBtn__overlay {
     display: none;
   }
-  &__img {
-    @include addBgImg(dang, 25);
-    @include addBgImg(sap, 25);
-  }
 
   //showtime head
   .green {
@@ -92,6 +88,23 @@
     }
   }
 }
+// Custom css for React
+#showing {
+  .movieThumbnail {
+    .publish__date {
+      display: none;
+    }
+  }
+}
+#coming {
+  .movieThumbnail {
+    .playBtn__overlay,
+    .showing__point {
+      display: none;
+    }
+  }
+}
+// End Custom css for React
 
 @include RESPONSIVE("768px") {
   .movieThumbnail {
