@@ -28,41 +28,84 @@
     <!-- HEADER -->
     
     <header id="header">
-      <div class="containers header">
-        <div class="nav-bar">
-          <div class="brand">
-            <a href="#" id="hero">brandLogo</a>
-          </div>
-          <div class="nav-list">
+      <div class="header-wrapper">
+        <div class="nav-bar container-fluid">
+          <a href="#" class="navbar-brand">
+            <img class="logo-img" src="./images/logo.png" alt="logo">
+          </a>
+          
+          <!-- <div class="header__mid">
+            <a className="header__mid--link" href="#lichchieu">
+              Home
+            </a>
+            <a className="header__mid--link" href="#cumrap">
+             Lich chieu
+            </a>
+            <a className="header__mid--link" href="#tintuc">
+              Tin tức
+            </a>
+            <a className="header__mid--link" href="#ungdung">
+              Ứng dụng
+            </a>
+          </div> -->
+          <ul class="header__mid">
+            <li class="nav-item nav-item--login">
+              <a class="nav-link" href="#!">
+                <img class="avatar-img" src="./images/avatar.png" alt="avatar">
+                Dang nhap</a>
+            </li>
+            <li class="nav-item nav-item--register">
+              <a  class="nav-link" href="#!!!!">Dang ky</a>
+            </li>
+            <li class="nav-item hideOnDesk">
+              <a class="nav-link" href="#!!">Home</a>
+            </li>
+            <li class="nav-item hideOnDesk">
+              <a  class="nav-link" href="#!!">Lich chieu</a>
+            </li>
+            <li class="nav-item hideOnDesk">
+              <a class="nav-link" href="#!!!">Tin tuc</a>
+            </li>
+            <li class="nav-item hideOnDesk">
+              <a class="nav-link"  href="#!!!">Ung dung</a>
+            </li>
+            
+          </ul>
+          <nav class="nav-group">
             <div class="hamburger">
               <div class="bar"></div>
             </div>
-            <ul>
-              <li><a href="#!" data-after="Home">Home</a></li>
-              <li><a href="#!!" data-after="About">About</a></li>
-              <li><a href="#!!!" data-after="Service">Serivie</a></li>
-              <li><a href="#!!!!" data-after="Something">Something</a></li>
+            
+            <ul class="nav-list">
+              <li class="nav-item nav-item--login">
+                <a class="nav-link" href="#!">
+                  <img class="avatar-img" src="./images/avatar.png" alt="avatar">
+                  Dang nhap</a>
+              </li>
+              <li class="nav-item nav-item--register">
+                <a  class="nav-link" href="#!!!!">Dang ky</a>
+              </li>
+              <li class="nav-item hideOnDesk">
+                <a class="nav-link" href="#!!">Home</a>
+              </li>
+              <li class="nav-item hideOnDesk">
+                <a  class="nav-link" href="#!!">Lich chieu</a>
+              </li>
+              <li class="nav-item hideOnDesk">
+                <a class="nav-link" href="#!!!">Tin tuc</a>
+              </li>
+              <li class="nav-item hideOnDesk">
+                <a class="nav-link"  href="#!!!">Ung dung</a>
+              </li>
+              
             </ul>
-          </div>
+          </nav>
         </div>
       </div>
     </header>
     </div>
     <!-- CAROUSEL -->
     <section class="carousel">
-      <!-- carousel item 1 -->
-      <div class="carousel__item">
-        <div class="carousel__img">
-          <a href="#!">
-            <img src="./images/hero1.jpg" alt="" />
-          </a>
-        </div>
-        <div class="playBtn__overlay">
-          <a href="#" class="play__link">
-            <img src="./images/play.png" alt="" />
-          </a>
-        </div>
-      </div>
       <!-- carousel item 2 -->
       <div class="carousel__item">
         <div class="carousel__img">
@@ -76,11 +119,11 @@
           </a>
         </div>
       </div>
-      <!-- carousel item 3 -->
+      <!-- carousel item 1 -->
       <div class="carousel__item">
         <div class="carousel__img">
           <a href="#!">
-            <img src="./images/hero3.png" alt="" />
+            <img src="./images/hero1.jpg" alt="" />
           </a>
         </div>
         <div class="playBtn__overlay">
@@ -89,19 +132,7 @@
           </a>
         </div>
       </div>
-      <!-- carousel item 4 -->
-      <div class="carousel__item">
-        <div class="carousel__img">
-          <a href="#!">
-            <img src="./images/hero4.png" alt="" />
-          </a>
-        </div>
-        <div class="playBtn__overlay">
-          <a href="#" class="play__link">
-            <img src="./images/play.png" alt="" />
-          </a>
-        </div>
-      </div>
+      
     </section>
    
    
@@ -125,12 +156,12 @@
 
   </body>
   <script>
-    const hamburger = document.querySelector('.header .nav-bar .nav-list .hamburger');
-const mobile_menu = document.querySelector('.header .nav-bar .nav-list ul');
-const mobile_menu_active = document.querySelector('.header .nav-bar .nav-list ul.active');
+    const hamburger = document.querySelector('.nav-bar .nav-group .hamburger');
+const mobile_menu = document.querySelector('.nav-bar .nav-group .nav-list');
 
-const menu_item = document.querySelectorAll('.header .nav-bar .nav-list ul li a');
-const header = document.querySelector('.header.containers');
+
+const menu_item = document.querySelectorAll('.nav-bar .nav-group .nav-list li a');
+const header = document.querySelector('.header-wrapper');
 
 hamburger.addEventListener('click', () => {
 	hamburger.classList.toggle('active');
@@ -151,9 +182,9 @@ mobile_menu.addEventListener("click",()=>{
 document.addEventListener('scroll', () => {
 	var scroll_position = window.scrollY;
 	if (scroll_position > 250) {
-		header.style.backgroundColor = 'rgba(255, 255, 255)';
-	} else {
 		header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+	} else {
+		header.style.backgroundColor = 'rgba(255, 255, 255)';
 	}
 });
 

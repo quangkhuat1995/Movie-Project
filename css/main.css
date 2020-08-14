@@ -2328,53 +2328,67 @@ p {
   z-index: 1000;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
   height: auto;
 }
 
-#header .header {
+#header .header-wrapper {
   min-height: 8vh;
-  background: rgba(255, 255, 255, 0.95);
+  background: #fff;
 }
 
-#header .header .nav-bar {
+#header .header-wrapper:hover {
+  background: #fff !important;
+}
+
+#header .header-wrapper .nav-bar {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   height: 100%;
-  padding: 0 10px;
 }
 
-#header .header .nav-bar .nav-list ul {
+#header .header-wrapper .logo-img {
+  width: 50px;
+}
+
+#header .header-wrapper .avatar-img {
+  display: inline-block;
+  margin-right: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+#header .nav-list {
   list-style: none;
   margin: 0;
   position: absolute;
   top: 0;
   right: 0;
-  position: fixed;
   width: 30vw;
   min-width: 50%;
   height: 100vh;
-  background-color: rgba(233, 233, 233, 0.2);
+  background-color: #fff;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   z-index: 2;
   transform: translateX(100%);
-  transition: 0.3s ease all;
+  transition: 0.4s ease all;
 }
 
-#header .header .nav-bar .nav-list ul.active {
+#header .nav-list.active {
   transform: translateX(0);
 }
 
-#header .header .nav-bar .nav-list ul.active::after {
+#header .nav-list.active::after {
   content: "";
   z-index: 1;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.8);
   height: 100vh;
   width: 100vw;
   position: absolute;
@@ -2384,46 +2398,39 @@ p {
   pointer-events: all;
 }
 
-#header .header .nav-bar .nav-list ul a {
+#header .nav-list .nav-link, #header .nav-list .theater__movies--item {
   font-weight: 500;
-  letter-spacing: 0.2rem;
-  text-decoration: none;
-  color: #333;
-  font-size: 2.5rem;
-  text-transform: uppercase;
+  color: #000;
+  font-size: 18px;
+  text-transform: capitalize;
   padding: 20px;
   display: block;
+  transition: 0.3s ease all;
 }
 
-#header .header .nav-bar .nav-list ul a::after {
-  content: attr(data-after);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  color: #333;
-  font-size: 13rem;
-  opacity: 0.5;
-  letter-spacing: 50px;
-  z-index: -1;
-  transition: 0.3s ease letter-spacing;
+#header .nav-list .nav-item {
+  line-height: 25px;
+  width: 100%;
 }
 
-#header .header .nav-bar .nav-list ul li:hover a {
+#header .nav-list .nav-item--login {
+  width: unset;
+}
+
+#header .nav-list .nav-item--register {
+  order: 10;
+}
+
+#header .nav-list .nav-item:hover .nav-link, #header .nav-list .nav-item:hover .theater__movies--item {
   color: #fb4226;
 }
 
-#header .header .nav-bar .nav-list ul li:hover a::after {
-  transform: translate(-50%, -50%) scale(1);
-  letter-spacing: initial;
-}
-
-#header .hamburger {
-  height: 60px;
-  width: 60px;
+.nav-group .hamburger {
+  height: 30px;
+  width: 30px;
   border-radius: 50%;
   display: inline-block;
-  border: 3px solid #333;
+  border: 2px solid #333;
   position: relative;
   display: flex;
   flex-direction: row;
@@ -2433,15 +2440,15 @@ p {
   cursor: pointer;
 }
 
-#header .hamburger .bar {
+.nav-group .hamburger .bar {
   height: 2px;
-  width: 30px;
+  width: 15px;
   position: absolute;
   background-color: #333;
   z-index: -1;
 }
 
-#header .hamburger .bar::after, #header .hamburger .bar::before {
+.nav-group .hamburger .bar::after, .nav-group .hamburger .bar::before {
   content: "";
   position: absolute;
   left: 0;
@@ -2452,24 +2459,32 @@ p {
   transition-property: top, bottom;
 }
 
-#header .hamburger .bar::after {
-  top: 8px;
+.nav-group .hamburger .bar::after {
+  top: 5px;
 }
 
-#header .hamburger .bar::before {
-  bottom: 8px;
+.nav-group .hamburger .bar::before {
+  bottom: 5px;
 }
 
-#header .hamburger.active .bar::after, #header .hamburger.active .bar::before {
+.nav-group .hamburger.active {
+  margin-right: 17px;
+}
+
+.nav-group .hamburger.active .bar::after, .nav-group .hamburger.active .bar::before {
   top: 0;
   bottom: 0;
+}
+
+#header .header__mid {
+  display: none;
 }
 
 @media screen and (min-width: 768px) {
   #header .hamburger {
     display: none;
   }
-  #header .header .nav-bar .nav-list ul {
+  #header .nav-group .nav-list {
     position: initial;
     display: block;
     height: auto;
@@ -2477,17 +2492,61 @@ p {
     background: transparent;
     transform: translate(0);
   }
-  #header .header .nav-bar .nav-list ul::after {
+  #header .nav-group .nav-list::after {
     display: none;
   }
-  #header .header .nav-bar .nav-list ul li {
+  #header .nav-group .nav-list .nav-item {
     display: inline-block;
+    width: unset;
   }
-  #header .header .nav-bar .nav-list ul li a {
-    font-size: 1.8rem;
+  #header .nav-group .nav-list .nav-item--register {
+    padding-left: 10px;
+    margin-left: 10px;
+    border-left: 1px solid #9b9b9b;
   }
-  #header .header .nav-bar .nav-list ul li a::after {
+  #header .nav-group .nav-list .nav-item.hideOnDesk {
     display: none;
+  }
+  #header .nav-group .nav-list .nav-item .nav-link, #header .nav-group .nav-list .nav-item .theater__movies--item {
+    color: #9b9b9b;
+    font-size: 13px;
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #header .header__mid {
+    margin: 0;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  #header .header__mid .nav-item {
+    display: none;
+  }
+  #header .header__mid .nav-item.hideOnDesk {
+    width: auto;
+    display: block;
+  }
+  #header .header__mid .nav-item .nav-link, #header .header__mid .nav-item .theater__movies--item {
+    color: #000;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.4s ease all;
+  }
+  #header .header__mid .nav-item:hover .nav-link, #header .header__mid .nav-item:hover .theater__movies--item {
+    color: #fb4226;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  #header .header__mid {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 /*# sourceMappingURL=main.css.map */
