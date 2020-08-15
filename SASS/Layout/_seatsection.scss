@@ -2,27 +2,16 @@
   //@include childGrid(1, 4, 2, 3);
   // width: 95%;
   // margin-left: auto;
-  margin: 80px 0;
   padding: 30px 0;
   background-color: $color-white-0;
-  @include positionAbsolute(0, 0);
+  // @include positionAbsolute(0, 0);
   overflow: auto;
-  z-index: 99;
-  @include RESPONSIVE("768px") {
-    // grid-area: seat;
-    grid-row: 2/3;
-    grid-column: 1/2;
-    margin: 0;
-    margin-left: auto;
-    width: 95%;
-    position: relative;
-    overflow: scroll;
-    z-index: 98;
+  min-width: 265px;
 
-    &::-webkit-scrollbar {
-      display: none;
-    }
-  }
+  //   &::-webkit-scrollbar {
+  //     display: none;
+  //   }
+  // }
   .seat__section--top {
     width: 90%;
     margin: 0 auto;
@@ -71,8 +60,10 @@
       }
     }
     .listseat {
+      display: grid;
+      place-items: center;
       margin: auto;
-      width: fit-content;
+      width: 90%;
       .seatrow {
         @include displayFlex(flex-start, center);
         pointer-events: none;

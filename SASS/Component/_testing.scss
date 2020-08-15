@@ -45,7 +45,7 @@
     @include displayFlex(flex-start, flex-start, column);
     z-index: 2;
     transform: translateX(100%);
-    transition: 0.4s ease all;
+    transition: 0.4s ease transform;
 
     &.active {
       transform: translateX(0);
